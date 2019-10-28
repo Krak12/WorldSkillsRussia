@@ -23,5 +23,32 @@ namespace WorldSkillsRussia
             this.eventsTableAdapter.Fill(this.dbDataSet.events);
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // настройка ввода логина или пароля
+            var staffTA = new dbDataSetTableAdapters.staffTableAdapter();
+            var staffs = staffTA.GetDataByLoginAndPass(textBox2.Text, textBox3.Text);
+
+            if (staffs.Count == 0)
+            {
+                MessageBox.Show("Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // переходы по формам, зависящие от type_staff
+            Data.staffAutorized = staffTA.GetDataByLogin(textBox2.Text.Trim()).First();
+
+            if (Data.staffAutorized.Id_staff_type_staff == 1)
+            {
+                Form t = new Treatments();
+                Hide();
+                DialogResult res = t.ShowDialog();
+                if (res != DialogResult.Cancel)
+                {
+                    Show();
+                }
+                else Close();
+            }
+        }
     }
 }

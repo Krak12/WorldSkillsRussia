@@ -9153,12 +9153,34 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, telepho" +
                 "ne, Id_staff_type_staff, online FROM dbo.staff";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Id_satff, first_name, second_name, patronymic, [log], pass, email, " +
+                "telephone, Id_staff_type_staff, online\r\nFROM            staff\r\nWHERE        ([lo" +
+                "g] = @log)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        Id_satff, first_name, second_name, patronymic, [log], pass, email, " +
+                "telephone, Id_staff_type_staff, online\r\nFROM            staff\r\nWHERE        ([lo" +
+                "g] = @log) AND (pass = @pass)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        Id_satff, first_name, second_name, patronymic, [log], pass, email, " +
+                "telephone, Id_staff_type_staff, online\r\nFROM            staff\r\nWHERE        (Id_" +
+                "satff = @ID)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_satff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9180,6 +9202,58 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dbDataSet.staffDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dbDataSet.staffDataTable dataTable = new dbDataSet.staffDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dbDataSet.staffDataTable GetDataByLogin(string log) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((log == null)) {
+                throw new global::System.ArgumentNullException("log");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(log));
+            }
+            dbDataSet.staffDataTable dataTable = new dbDataSet.staffDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dbDataSet.staffDataTable GetDataByLoginAndPass(string log, string pass) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((log == null)) {
+                throw new global::System.ArgumentNullException("log");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(log));
+            }
+            if ((pass == null)) {
+                throw new global::System.ArgumentNullException("pass");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pass));
+            }
+            dbDataSet.staffDataTable dataTable = new dbDataSet.staffDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dbDataSet.staffDataTable GetDataByStaffID(int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             dbDataSet.staffDataTable dataTable = new dbDataSet.staffDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
