@@ -116,6 +116,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Подать обращение";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -125,6 +126,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Популярные обращения";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox6
             // 
@@ -144,9 +146,9 @@
             // 
             this.button3.Location = new System.Drawing.Point(944, 249);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(224, 50);
+            this.button3.Size = new System.Drawing.Size(224, 74);
             this.button3.TabIndex = 10;
-            this.button3.Text = "Вход";
+            this.button3.Text = "Вход сотрудника";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

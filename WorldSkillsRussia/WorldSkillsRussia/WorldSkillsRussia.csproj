@@ -52,16 +52,64 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EssentialTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EssentialTreatment.Designer.cs">
+      <DependentUpon>EssentialTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventManagement.Designer.cs">
+      <DependentUpon>EventManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModerationAppeals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModerationAppeals.Designer.cs">
+      <DependentUpon>ModerationAppeals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopularAppeals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopularAppeals.Designer.cs">
+      <DependentUpon>PopularAppeals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reception.Designer.cs">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubmissionAppeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubmissionAppeal.Designer.cs">
+      <DependentUpon>SubmissionAppeal.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EssentialTreatment.resx">
+      <DependentUpon>EssentialTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventManagement.resx">
+      <DependentUpon>EventManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModerationAppeals.resx">
+      <DependentUpon>ModerationAppeals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopularAppeals.resx">
+      <DependentUpon>PopularAppeals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -73,6 +121,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reception.resx">
+      <DependentUpon>Reception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmissionAppeal.resx">
+      <DependentUpon>SubmissionAppeal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="dbDataSet.xsc">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </None>

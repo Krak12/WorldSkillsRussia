@@ -50,33 +50,33 @@ namespace WorldSkillsRussia {
         
         private userDataTable tableuser;
         
-        private global::System.Data.DataRelation relationFK_message_processing_messages1;
-        
-        private global::System.Data.DataRelation relationFK_message_processing_ToTable;
-        
-        private global::System.Data.DataRelation relationFK_message_processing_ToTable_2;
-        
-        private global::System.Data.DataRelation relationFK_messages_events1;
-        
-        private global::System.Data.DataRelation relationFK_Messages_message_categories;
-        
-        private global::System.Data.DataRelation relationFK_Messages_type_message;
-        
-        private global::System.Data.DataRelation relationFK_messages_user1;
-        
-        private global::System.Data.DataRelation relationFK_popular_group_ToTable;
-        
-        private global::System.Data.DataRelation relationFK_popular_messages_messages1;
-        
-        private global::System.Data.DataRelation relationFK_popular_messages_ToTable_1;
+        private global::System.Data.DataRelation relationFK_staff_event_staff;
         
         private global::System.Data.DataRelation relationFK_staff_ToTable;
         
-        private global::System.Data.DataRelation relationFK_staff_event_events;
+        private global::System.Data.DataRelation relationFK_popular_messages_ToTable_1;
         
-        private global::System.Data.DataRelation relationFK_staff_event_staff;
+        private global::System.Data.DataRelation relationFK_popular_messages_messages1;
+        
+        private global::System.Data.DataRelation relationFK_messages_user1;
+        
+        private global::System.Data.DataRelation relationFK_Messages_type_message;
+        
+        private global::System.Data.DataRelation relationFK_message_processing_ToTable_2;
+        
+        private global::System.Data.DataRelation relationFK_message_processing_ToTable;
+        
+        private global::System.Data.DataRelation relationFK_message_processing_messages1;
+        
+        private global::System.Data.DataRelation relationFK_Messages_message_categories;
         
         private global::System.Data.DataRelation relationFK_user_ToTable;
+        
+        private global::System.Data.DataRelation relationFK_staff_event_events;
+        
+        private global::System.Data.DataRelation relationFK_popular_group_ToTable;
+        
+        private global::System.Data.DataRelation relationFK_messages_events1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -510,20 +510,20 @@ namespace WorldSkillsRussia {
                     this.tableuser.InitVars();
                 }
             }
-            this.relationFK_message_processing_messages1 = this.Relations["FK_message_processing_messages1"];
-            this.relationFK_message_processing_ToTable = this.Relations["FK_message_processing_ToTable"];
-            this.relationFK_message_processing_ToTable_2 = this.Relations["FK_message_processing_ToTable_2"];
-            this.relationFK_messages_events1 = this.Relations["FK_messages_events1"];
-            this.relationFK_Messages_message_categories = this.Relations["FK_Messages_message_categories"];
-            this.relationFK_Messages_type_message = this.Relations["FK_Messages_type_message"];
-            this.relationFK_messages_user1 = this.Relations["FK_messages_user1"];
-            this.relationFK_popular_group_ToTable = this.Relations["FK_popular_group_ToTable"];
-            this.relationFK_popular_messages_messages1 = this.Relations["FK_popular_messages_messages1"];
-            this.relationFK_popular_messages_ToTable_1 = this.Relations["FK_popular_messages_ToTable_1"];
-            this.relationFK_staff_ToTable = this.Relations["FK_staff_ToTable"];
-            this.relationFK_staff_event_events = this.Relations["FK_staff_event_events"];
             this.relationFK_staff_event_staff = this.Relations["FK_staff_event_staff"];
+            this.relationFK_staff_ToTable = this.Relations["FK_staff_ToTable"];
+            this.relationFK_popular_messages_ToTable_1 = this.Relations["FK_popular_messages_ToTable_1"];
+            this.relationFK_popular_messages_messages1 = this.Relations["FK_popular_messages_messages1"];
+            this.relationFK_messages_user1 = this.Relations["FK_messages_user1"];
+            this.relationFK_Messages_type_message = this.Relations["FK_Messages_type_message"];
+            this.relationFK_message_processing_ToTable_2 = this.Relations["FK_message_processing_ToTable_2"];
+            this.relationFK_message_processing_ToTable = this.Relations["FK_message_processing_ToTable"];
+            this.relationFK_message_processing_messages1 = this.Relations["FK_message_processing_messages1"];
+            this.relationFK_Messages_message_categories = this.Relations["FK_Messages_message_categories"];
             this.relationFK_user_ToTable = this.Relations["FK_user_ToTable"];
+            this.relationFK_staff_event_events = this.Relations["FK_staff_event_events"];
+            this.relationFK_popular_group_ToTable = this.Relations["FK_popular_group_ToTable"];
+            this.relationFK_messages_events1 = this.Relations["FK_messages_events1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -560,62 +560,62 @@ namespace WorldSkillsRussia {
             base.Tables.Add(this.tabletype_staff);
             this.tableuser = new userDataTable();
             base.Tables.Add(this.tableuser);
-            this.relationFK_message_processing_messages1 = new global::System.Data.DataRelation("FK_message_processing_messages1", new global::System.Data.DataColumn[] {
-                        this.tablemessages.Id_messageColumn}, new global::System.Data.DataColumn[] {
-                        this.tablemessage_processing.Id_message_processing_messageColumn}, false);
-            this.Relations.Add(this.relationFK_message_processing_messages1);
-            this.relationFK_message_processing_ToTable = new global::System.Data.DataRelation("FK_message_processing_ToTable", new global::System.Data.DataColumn[] {
-                        this.tablestaff.Id_satffColumn}, new global::System.Data.DataColumn[] {
-                        this.tablemessage_processing.Id_message_processing_staffColumn}, false);
-            this.Relations.Add(this.relationFK_message_processing_ToTable);
-            this.relationFK_message_processing_ToTable_2 = new global::System.Data.DataRelation("FK_message_processing_ToTable_2", new global::System.Data.DataColumn[] {
-                        this.tablestatus_message.Id_status_messageColumn}, new global::System.Data.DataColumn[] {
-                        this.tablemessage_processing.Id_message_processing_status_messageColumn}, false);
-            this.Relations.Add(this.relationFK_message_processing_ToTable_2);
-            this.relationFK_messages_events1 = new global::System.Data.DataRelation("FK_messages_events1", new global::System.Data.DataColumn[] {
-                        this.tableevents.Id_eventsColumn}, new global::System.Data.DataColumn[] {
-                        this.tablemessages.Id_message_eventColumn}, false);
-            this.Relations.Add(this.relationFK_messages_events1);
-            this.relationFK_Messages_message_categories = new global::System.Data.DataRelation("FK_Messages_message_categories", new global::System.Data.DataColumn[] {
-                        this.tablemessage_categories.Id_message_categoriesColumn}, new global::System.Data.DataColumn[] {
-                        this.tablemessages.Id_message_message_categoriesColumn}, false);
-            this.Relations.Add(this.relationFK_Messages_message_categories);
-            this.relationFK_Messages_type_message = new global::System.Data.DataRelation("FK_Messages_type_message", new global::System.Data.DataColumn[] {
-                        this.tabletype_message.Id_type_messageColumn}, new global::System.Data.DataColumn[] {
-                        this.tablemessages.Id_message_type_messageColumn}, false);
-            this.Relations.Add(this.relationFK_Messages_type_message);
-            this.relationFK_messages_user1 = new global::System.Data.DataRelation("FK_messages_user1", new global::System.Data.DataColumn[] {
-                        this.tableuser.Id_userColumn}, new global::System.Data.DataColumn[] {
-                        this.tablemessages.Id_message_userColumn}, false);
-            this.Relations.Add(this.relationFK_messages_user1);
-            this.relationFK_popular_group_ToTable = new global::System.Data.DataRelation("FK_popular_group_ToTable", new global::System.Data.DataColumn[] {
-                        this.tableevents.Id_eventsColumn}, new global::System.Data.DataColumn[] {
-                        this.tablepopular_group.Id_popular_group_eventColumn}, false);
-            this.Relations.Add(this.relationFK_popular_group_ToTable);
-            this.relationFK_popular_messages_messages1 = new global::System.Data.DataRelation("FK_popular_messages_messages1", new global::System.Data.DataColumn[] {
-                        this.tablemessages.Id_messageColumn}, new global::System.Data.DataColumn[] {
-                        this.tablepopular_messages.Id_popular_messagesColumn}, false);
-            this.Relations.Add(this.relationFK_popular_messages_messages1);
-            this.relationFK_popular_messages_ToTable_1 = new global::System.Data.DataRelation("FK_popular_messages_ToTable_1", new global::System.Data.DataColumn[] {
-                        this.tablepopular_group.Id_popular_groupColumn}, new global::System.Data.DataColumn[] {
-                        this.tablepopular_messages.Id_popular_messages_popular_groupColumn}, false);
-            this.Relations.Add(this.relationFK_popular_messages_ToTable_1);
-            this.relationFK_staff_ToTable = new global::System.Data.DataRelation("FK_staff_ToTable", new global::System.Data.DataColumn[] {
-                        this.tabletype_staff.Id_type_staffColumn}, new global::System.Data.DataColumn[] {
-                        this.tablestaff.Id_staff_type_staffColumn}, false);
-            this.Relations.Add(this.relationFK_staff_ToTable);
-            this.relationFK_staff_event_events = new global::System.Data.DataRelation("FK_staff_event_events", new global::System.Data.DataColumn[] {
-                        this.tableevents.Id_eventsColumn}, new global::System.Data.DataColumn[] {
-                        this.tablestaff_event.Id_staff_event_eventColumn}, false);
-            this.Relations.Add(this.relationFK_staff_event_events);
             this.relationFK_staff_event_staff = new global::System.Data.DataRelation("FK_staff_event_staff", new global::System.Data.DataColumn[] {
                         this.tablestaff.Id_satffColumn}, new global::System.Data.DataColumn[] {
                         this.tablestaff_event.Id_staff_event_staffColumn}, false);
             this.Relations.Add(this.relationFK_staff_event_staff);
+            this.relationFK_staff_ToTable = new global::System.Data.DataRelation("FK_staff_ToTable", new global::System.Data.DataColumn[] {
+                        this.tabletype_staff.Id_type_staffColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestaff.Id_staff_type_staffColumn}, false);
+            this.Relations.Add(this.relationFK_staff_ToTable);
+            this.relationFK_popular_messages_ToTable_1 = new global::System.Data.DataRelation("FK_popular_messages_ToTable_1", new global::System.Data.DataColumn[] {
+                        this.tablepopular_group.Id_popular_groupColumn}, new global::System.Data.DataColumn[] {
+                        this.tablepopular_messages.Id_popular_messages_popular_groupColumn}, false);
+            this.Relations.Add(this.relationFK_popular_messages_ToTable_1);
+            this.relationFK_popular_messages_messages1 = new global::System.Data.DataRelation("FK_popular_messages_messages1", new global::System.Data.DataColumn[] {
+                        this.tablemessages.Id_messageColumn}, new global::System.Data.DataColumn[] {
+                        this.tablepopular_messages.Id_popular_messagesColumn}, false);
+            this.Relations.Add(this.relationFK_popular_messages_messages1);
+            this.relationFK_messages_user1 = new global::System.Data.DataRelation("FK_messages_user1", new global::System.Data.DataColumn[] {
+                        this.tableuser.Id_userColumn}, new global::System.Data.DataColumn[] {
+                        this.tablemessages.Id_message_userColumn}, false);
+            this.Relations.Add(this.relationFK_messages_user1);
+            this.relationFK_Messages_type_message = new global::System.Data.DataRelation("FK_Messages_type_message", new global::System.Data.DataColumn[] {
+                        this.tabletype_message.Id_type_messageColumn}, new global::System.Data.DataColumn[] {
+                        this.tablemessages.Id_message_type_messageColumn}, false);
+            this.Relations.Add(this.relationFK_Messages_type_message);
+            this.relationFK_message_processing_ToTable_2 = new global::System.Data.DataRelation("FK_message_processing_ToTable_2", new global::System.Data.DataColumn[] {
+                        this.tablestatus_message.Id_status_messageColumn}, new global::System.Data.DataColumn[] {
+                        this.tablemessage_processing.Id_message_processing_status_messageColumn}, false);
+            this.Relations.Add(this.relationFK_message_processing_ToTable_2);
+            this.relationFK_message_processing_ToTable = new global::System.Data.DataRelation("FK_message_processing_ToTable", new global::System.Data.DataColumn[] {
+                        this.tablestaff.Id_satffColumn}, new global::System.Data.DataColumn[] {
+                        this.tablemessage_processing.Id_message_processing_staffColumn}, false);
+            this.Relations.Add(this.relationFK_message_processing_ToTable);
+            this.relationFK_message_processing_messages1 = new global::System.Data.DataRelation("FK_message_processing_messages1", new global::System.Data.DataColumn[] {
+                        this.tablemessages.Id_messageColumn}, new global::System.Data.DataColumn[] {
+                        this.tablemessage_processing.Id_message_processing_messageColumn}, false);
+            this.Relations.Add(this.relationFK_message_processing_messages1);
+            this.relationFK_Messages_message_categories = new global::System.Data.DataRelation("FK_Messages_message_categories", new global::System.Data.DataColumn[] {
+                        this.tablemessage_categories.Id_message_categoriesColumn}, new global::System.Data.DataColumn[] {
+                        this.tablemessages.Id_message_message_categoriesColumn}, false);
+            this.Relations.Add(this.relationFK_Messages_message_categories);
             this.relationFK_user_ToTable = new global::System.Data.DataRelation("FK_user_ToTable", new global::System.Data.DataColumn[] {
                         this.tablefederal_districts.Id_federal_districtsColumn}, new global::System.Data.DataColumn[] {
                         this.tableuser.id_user_federal_districtsColumn}, false);
             this.Relations.Add(this.relationFK_user_ToTable);
+            this.relationFK_staff_event_events = new global::System.Data.DataRelation("FK_staff_event_events", new global::System.Data.DataColumn[] {
+                        this.tableevents.Id_eventsColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestaff_event.Id_staff_event_eventColumn}, false);
+            this.Relations.Add(this.relationFK_staff_event_events);
+            this.relationFK_popular_group_ToTable = new global::System.Data.DataRelation("FK_popular_group_ToTable", new global::System.Data.DataColumn[] {
+                        this.tableevents.Id_eventsColumn}, new global::System.Data.DataColumn[] {
+                        this.tablepopular_group.Id_popular_group_eventColumn}, false);
+            this.Relations.Add(this.relationFK_popular_group_ToTable);
+            this.relationFK_messages_events1 = new global::System.Data.DataRelation("FK_messages_events1", new global::System.Data.DataColumn[] {
+                        this.tableevents.Id_eventsColumn}, new global::System.Data.DataColumn[] {
+                        this.tablemessages.Id_message_eventColumn}, false);
+            this.Relations.Add(this.relationFK_messages_events1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3031,10 +3031,6 @@ namespace WorldSkillsRussia {
             
             private global::System.Data.DataColumn columnpatronymic;
             
-            private global::System.Data.DataColumn columnlog;
-            
-            private global::System.Data.DataColumn columnpass;
-            
             private global::System.Data.DataColumn columnemail;
             
             private global::System.Data.DataColumn columntelephone;
@@ -3042,6 +3038,10 @@ namespace WorldSkillsRussia {
             private global::System.Data.DataColumn columnId_staff_type_staff;
             
             private global::System.Data.DataColumn columnonline;
+            
+            private global::System.Data.DataColumn columnlog;
+            
+            private global::System.Data.DataColumn columnpass;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3110,22 +3110,6 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn logColumn {
-                get {
-                    return this.columnlog;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn passColumn {
-                get {
-                    return this.columnpass;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn emailColumn {
                 get {
                     return this.columnemail;
@@ -3153,6 +3137,22 @@ namespace WorldSkillsRussia {
             public global::System.Data.DataColumn onlineColumn {
                 get {
                     return this.columnonline;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn logColumn {
+                get {
+                    return this.columnlog;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn passColumn {
+                get {
+                    return this.columnpass;
                 }
             }
             
@@ -3193,21 +3193,21 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public staffRow AddstaffRow(string first_name, string second_name, string patronymic, string log, string pass, string email, string telephone, type_staffRow parenttype_staffRowByFK_staff_ToTable, bool online) {
+            public staffRow AddstaffRow(string first_name, string second_name, string patronymic, string email, string telephone, type_staffRow parenttype_staffRowByFK_staff_ToTable, bool online, string log, string pass) {
                 staffRow rowstaffRow = ((staffRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         first_name,
                         second_name,
                         patronymic,
-                        log,
-                        pass,
                         email,
                         telephone,
                         null,
-                        online};
+                        online,
+                        log,
+                        pass};
                 if ((parenttype_staffRowByFK_staff_ToTable != null)) {
-                    columnValuesArray[8] = parenttype_staffRowByFK_staff_ToTable[0];
+                    columnValuesArray[6] = parenttype_staffRowByFK_staff_ToTable[0];
                 }
                 rowstaffRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstaffRow);
@@ -3242,12 +3242,12 @@ namespace WorldSkillsRussia {
                 this.columnfirst_name = base.Columns["first_name"];
                 this.columnsecond_name = base.Columns["second_name"];
                 this.columnpatronymic = base.Columns["patronymic"];
-                this.columnlog = base.Columns["log"];
-                this.columnpass = base.Columns["pass"];
                 this.columnemail = base.Columns["email"];
                 this.columntelephone = base.Columns["telephone"];
                 this.columnId_staff_type_staff = base.Columns["Id_staff_type_staff"];
                 this.columnonline = base.Columns["online"];
+                this.columnlog = base.Columns["log"];
+                this.columnpass = base.Columns["pass"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3261,10 +3261,6 @@ namespace WorldSkillsRussia {
                 base.Columns.Add(this.columnsecond_name);
                 this.columnpatronymic = new global::System.Data.DataColumn("patronymic", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpatronymic);
-                this.columnlog = new global::System.Data.DataColumn("log", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlog);
-                this.columnpass = new global::System.Data.DataColumn("pass", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpass);
                 this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemail);
                 this.columntelephone = new global::System.Data.DataColumn("telephone", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3273,6 +3269,10 @@ namespace WorldSkillsRussia {
                 base.Columns.Add(this.columnId_staff_type_staff);
                 this.columnonline = new global::System.Data.DataColumn("online", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnonline);
+                this.columnlog = new global::System.Data.DataColumn("log", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlog);
+                this.columnpass = new global::System.Data.DataColumn("pass", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpass);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_satff}, true));
                 this.columnId_satff.AutoIncrement = true;
@@ -3287,16 +3287,16 @@ namespace WorldSkillsRussia {
                 this.columnsecond_name.MaxLength = 2147483647;
                 this.columnpatronymic.AllowDBNull = false;
                 this.columnpatronymic.MaxLength = 2147483647;
-                this.columnlog.AllowDBNull = false;
-                this.columnlog.MaxLength = 2147483647;
-                this.columnpass.AllowDBNull = false;
-                this.columnpass.MaxLength = 2147483647;
                 this.columnemail.AllowDBNull = false;
                 this.columnemail.MaxLength = 2147483647;
                 this.columntelephone.AllowDBNull = false;
                 this.columntelephone.MaxLength = 2147483647;
                 this.columnId_staff_type_staff.AllowDBNull = false;
                 this.columnonline.AllowDBNull = false;
+                this.columnlog.AllowDBNull = false;
+                this.columnlog.MaxLength = 2147483647;
+                this.columnpass.AllowDBNull = false;
+                this.columnpass.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5005,12 +5005,12 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public messagesRow[] GetmessagesRows() {
-                if ((this.Table.ChildRelations["FK_messages_events1"] == null)) {
-                    return new messagesRow[0];
+            public staff_eventRow[] Getstaff_eventRows() {
+                if ((this.Table.ChildRelations["FK_staff_event_events"] == null)) {
+                    return new staff_eventRow[0];
                 }
                 else {
-                    return ((messagesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_messages_events1"])));
+                    return ((staff_eventRow[])(base.GetChildRows(this.Table.ChildRelations["FK_staff_event_events"])));
                 }
             }
             
@@ -5027,12 +5027,12 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public staff_eventRow[] Getstaff_eventRows() {
-                if ((this.Table.ChildRelations["FK_staff_event_events"] == null)) {
-                    return new staff_eventRow[0];
+            public messagesRow[] GetmessagesRows() {
+                if ((this.Table.ChildRelations["FK_messages_events1"] == null)) {
+                    return new messagesRow[0];
                 }
                 else {
-                    return ((staff_eventRow[])(base.GetChildRows(this.Table.ChildRelations["FK_staff_event_events"])));
+                    return ((messagesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_messages_events1"])));
                 }
             }
         }
@@ -5210,12 +5210,12 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public messagesRow messagesRow {
+            public status_messageRow status_messageRow {
                 get {
-                    return ((messagesRow)(this.GetParentRow(this.Table.ParentRelations["FK_message_processing_messages1"])));
+                    return ((status_messageRow)(this.GetParentRow(this.Table.ParentRelations["FK_message_processing_ToTable_2"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_message_processing_messages1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_message_processing_ToTable_2"]);
                 }
             }
             
@@ -5232,12 +5232,12 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public status_messageRow status_messageRow {
+            public messagesRow messagesRow {
                 get {
-                    return ((status_messageRow)(this.GetParentRow(this.Table.ParentRelations["FK_message_processing_ToTable_2"])));
+                    return ((messagesRow)(this.GetParentRow(this.Table.ParentRelations["FK_message_processing_messages1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_message_processing_ToTable_2"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_message_processing_messages1"]);
                 }
             }
             
@@ -5374,23 +5374,12 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public eventsRow eventsRow {
+            public userRow userRow {
                 get {
-                    return ((eventsRow)(this.GetParentRow(this.Table.ParentRelations["FK_messages_events1"])));
+                    return ((userRow)(this.GetParentRow(this.Table.ParentRelations["FK_messages_user1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_messages_events1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public message_categoriesRow message_categoriesRow {
-                get {
-                    return ((message_categoriesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Messages_message_categories"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Messages_message_categories"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_messages_user1"]);
                 }
             }
             
@@ -5407,12 +5396,23 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public userRow userRow {
+            public message_categoriesRow message_categoriesRow {
                 get {
-                    return ((userRow)(this.GetParentRow(this.Table.ParentRelations["FK_messages_user1"])));
+                    return ((message_categoriesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Messages_message_categories"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_messages_user1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Messages_message_categories"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public eventsRow eventsRow {
+                get {
+                    return ((eventsRow)(this.GetParentRow(this.Table.ParentRelations["FK_messages_events1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_messages_events1"]);
                 }
             }
             
@@ -5430,23 +5430,23 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public message_processingRow[] Getmessage_processingRows() {
-                if ((this.Table.ChildRelations["FK_message_processing_messages1"] == null)) {
-                    return new message_processingRow[0];
-                }
-                else {
-                    return ((message_processingRow[])(base.GetChildRows(this.Table.ChildRelations["FK_message_processing_messages1"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public popular_messagesRow[] Getpopular_messagesRows() {
                 if ((this.Table.ChildRelations["FK_popular_messages_messages1"] == null)) {
                     return new popular_messagesRow[0];
                 }
                 else {
                     return ((popular_messagesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_popular_messages_messages1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public message_processingRow[] Getmessage_processingRows() {
+                if ((this.Table.ChildRelations["FK_message_processing_messages1"] == null)) {
+                    return new message_processingRow[0];
+                }
+                else {
+                    return ((message_processingRow[])(base.GetChildRows(this.Table.ChildRelations["FK_message_processing_messages1"])));
                 }
             }
         }
@@ -5581,23 +5581,23 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public messagesRow messagesRow {
-                get {
-                    return ((messagesRow)(this.GetParentRow(this.Table.ParentRelations["FK_popular_messages_messages1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_popular_messages_messages1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public popular_groupRow popular_groupRow {
                 get {
                     return ((popular_groupRow)(this.GetParentRow(this.Table.ParentRelations["FK_popular_messages_ToTable_1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_popular_messages_ToTable_1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public messagesRow messagesRow {
+                get {
+                    return ((messagesRow)(this.GetParentRow(this.Table.ParentRelations["FK_popular_messages_messages1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_popular_messages_messages1"]);
                 }
             }
         }
@@ -5662,28 +5662,6 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string log {
-                get {
-                    return ((string)(this[this.tablestaff.logColumn]));
-                }
-                set {
-                    this[this.tablestaff.logColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string pass {
-                get {
-                    return ((string)(this[this.tablestaff.passColumn]));
-                }
-                set {
-                    this[this.tablestaff.passColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string email {
                 get {
                     return ((string)(this[this.tablestaff.emailColumn]));
@@ -5728,6 +5706,28 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string log {
+                get {
+                    return ((string)(this[this.tablestaff.logColumn]));
+                }
+                set {
+                    this[this.tablestaff.logColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pass {
+                get {
+                    return ((string)(this[this.tablestaff.passColumn]));
+                }
+                set {
+                    this[this.tablestaff.passColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public type_staffRow type_staffRow {
                 get {
                     return ((type_staffRow)(this.GetParentRow(this.Table.ParentRelations["FK_staff_ToTable"])));
@@ -5739,23 +5739,23 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public message_processingRow[] Getmessage_processingRows() {
-                if ((this.Table.ChildRelations["FK_message_processing_ToTable"] == null)) {
-                    return new message_processingRow[0];
-                }
-                else {
-                    return ((message_processingRow[])(base.GetChildRows(this.Table.ChildRelations["FK_message_processing_ToTable"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public staff_eventRow[] Getstaff_eventRows() {
                 if ((this.Table.ChildRelations["FK_staff_event_staff"] == null)) {
                     return new staff_eventRow[0];
                 }
                 else {
                     return ((staff_eventRow[])(base.GetChildRows(this.Table.ChildRelations["FK_staff_event_staff"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public message_processingRow[] Getmessage_processingRows() {
+                if ((this.Table.ChildRelations["FK_message_processing_ToTable"] == null)) {
+                    return new message_processingRow[0];
+                }
+                else {
+                    return ((message_processingRow[])(base.GetChildRows(this.Table.ChildRelations["FK_message_processing_ToTable"])));
                 }
             }
         }
@@ -5815,23 +5815,23 @@ namespace WorldSkillsRussia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public eventsRow eventsRow {
-                get {
-                    return ((eventsRow)(this.GetParentRow(this.Table.ParentRelations["FK_staff_event_events"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_staff_event_events"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public staffRow staffRow {
                 get {
                     return ((staffRow)(this.GetParentRow(this.Table.ParentRelations["FK_staff_event_staff"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_staff_event_staff"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public eventsRow eventsRow {
+                get {
+                    return ((eventsRow)(this.GetParentRow(this.Table.ParentRelations["FK_staff_event_events"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_staff_event_events"]);
                 }
             }
             
@@ -9093,50 +9093,49 @@ SELECT Id_popular_messages, Id_popular_messages_message, Id_popular_messages_pop
             tableMapping.ColumnMappings.Add("first_name", "first_name");
             tableMapping.ColumnMappings.Add("second_name", "second_name");
             tableMapping.ColumnMappings.Add("patronymic", "patronymic");
-            tableMapping.ColumnMappings.Add("log", "log");
-            tableMapping.ColumnMappings.Add("pass", "pass");
             tableMapping.ColumnMappings.Add("email", "email");
             tableMapping.ColumnMappings.Add("telephone", "telephone");
             tableMapping.ColumnMappings.Add("Id_staff_type_staff", "Id_staff_type_staff");
             tableMapping.ColumnMappings.Add("online", "online");
+            tableMapping.ColumnMappings.Add("log", "log");
+            tableMapping.ColumnMappings.Add("pass", "pass");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[staff] WHERE (([Id_satff] = @Original_Id_satff) AND ([Id_staff" +
-                "_type_staff] = @Original_Id_staff_type_staff) AND ([online] = @Original_online))" +
-                "";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [staff] WHERE (([Id_satff] = @Original_Id_satff) AND ([Id_staff_type_" +
+                "staff] = @Original_Id_staff_type_staff) AND ([online] = @Original_online))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_satff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_satff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_staff_type_staff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_staff_type_staff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_online", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "online", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[staff] ([first_name], [second_name], [patronymic], [log], [pass], [email], [telephone], [Id_staff_type_staff], [online]) VALUES (@first_name, @second_name, @patronymic, @log, @pass, @email, @telephone, @Id_staff_type_staff, @online);
-SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, telephone, Id_staff_type_staff, online FROM staff WHERE (Id_satff = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [staff] ([first_name], [second_name], [patronymic], [email], [telephone], [Id_staff_type_staff], [online], [log], [pass]) VALUES (@first_name, @second_name, @patronymic, @email, @telephone, @Id_staff_type_staff, @online, @log, @pass);
+SELECT Id_satff, first_name, second_name, patronymic, email, telephone, Id_staff_type_staff, online, [log], pass FROM staff WHERE (Id_satff = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patronymic", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "patronymic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_staff_type_staff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_staff_type_staff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@online", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "online", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[staff] SET [first_name] = @first_name, [second_name] = @second_name, [patronymic] = @patronymic, [log] = @log, [pass] = @pass, [email] = @email, [telephone] = @telephone, [Id_staff_type_staff] = @Id_staff_type_staff, [online] = @online WHERE (([Id_satff] = @Original_Id_satff) AND ([Id_staff_type_staff] = @Original_Id_staff_type_staff) AND ([online] = @Original_online));
-SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, telephone, Id_staff_type_staff, online FROM staff WHERE (Id_satff = @Id_satff)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [staff] SET [first_name] = @first_name, [second_name] = @second_name, [patronymic] = @patronymic, [email] = @email, [telephone] = @telephone, [Id_staff_type_staff] = @Id_staff_type_staff, [online] = @online, [log] = @log, [pass] = @pass WHERE (([Id_satff] = @Original_Id_satff) AND ([Id_staff_type_staff] = @Original_Id_staff_type_staff) AND ([online] = @Original_online));
+SELECT Id_satff, first_name, second_name, patronymic, email, telephone, Id_staff_type_staff, online, [log], pass FROM staff WHERE (Id_satff = @Id_satff)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@patronymic", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "patronymic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_staff_type_staff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_staff_type_staff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@online", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "online", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_satff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_satff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_staff_type_staff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_staff_type_staff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_online", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "online", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -9156,29 +9155,27 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, telepho" +
-                "ne, Id_staff_type_staff, online FROM dbo.staff";
+            this._commandCollection[0].CommandText = "SELECT Id_satff, first_name, second_name, patronymic, email, telephone, Id_staff_" +
+                "type_staff, online, [log], pass FROM staff";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Id_satff, first_name, second_name, patronymic, [log], pass, email, " +
-                "telephone, Id_staff_type_staff, online\r\nFROM            staff\r\nWHERE        ([lo" +
-                "g] = @log)";
+            this._commandCollection[1].CommandText = "SELECT Id_satff, first_name, second_name, patronymic, email, telephone, Id_staff_" +
+                "type_staff, online, [log], pass FROM staff WHERE ([log] = @log)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Id_satff, first_name, second_name, patronymic, [log], pass, email, " +
-                "telephone, Id_staff_type_staff, online\r\nFROM            staff\r\nWHERE        ([lo" +
-                "g] = @log) AND (pass = @pass)";
+            this._commandCollection[2].CommandText = "SELECT Id_satff, first_name, second_name, patronymic, email, telephone, Id_staff_" +
+                "type_staff, online, [log], pass FROM staff WHERE ([log] = @log) AND (pass = @pas" +
+                "s)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@log", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "log", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        Id_satff, first_name, second_name, patronymic, [log], pass, email, " +
-                "telephone, Id_staff_type_staff, online\r\nFROM            staff\r\nWHERE        (Id_" +
-                "satff = @ID)";
+            this._commandCollection[3].CommandText = "SELECT Id_satff, first_name, second_name, patronymic, email, telephone, Id_staff_" +
+                "type_staff, online, [log], pass FROM staff WHERE (Id_satff = @ID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_satff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -9316,7 +9313,7 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string first_name, string second_name, string patronymic, string log, string pass, string email, string telephone, int Id_staff_type_staff, bool online) {
+        public virtual int Insert(string first_name, string second_name, string patronymic, string email, string telephone, int Id_staff_type_staff, bool online, string log, string pass) {
             if ((first_name == null)) {
                 throw new global::System.ArgumentNullException("first_name");
             }
@@ -9335,32 +9332,32 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(patronymic));
             }
-            if ((log == null)) {
-                throw new global::System.ArgumentNullException("log");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(log));
-            }
-            if ((pass == null)) {
-                throw new global::System.ArgumentNullException("pass");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(pass));
-            }
             if ((email == null)) {
                 throw new global::System.ArgumentNullException("email");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(email));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(email));
             }
             if ((telephone == null)) {
                 throw new global::System.ArgumentNullException("telephone");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(telephone));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(telephone));
             }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Id_staff_type_staff));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(online));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Id_staff_type_staff));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(online));
+            if ((log == null)) {
+                throw new global::System.ArgumentNullException("log");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(log));
+            }
+            if ((pass == null)) {
+                throw new global::System.ArgumentNullException("pass");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(pass));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9381,7 +9378,7 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string first_name, string second_name, string patronymic, string log, string pass, string email, string telephone, int Id_staff_type_staff, bool online, int Original_Id_satff, int Original_Id_staff_type_staff, bool Original_online, int Id_satff) {
+        public virtual int Update(string first_name, string second_name, string patronymic, string email, string telephone, int Id_staff_type_staff, bool online, string log, string pass, int Original_Id_satff, int Original_Id_staff_type_staff, bool Original_online, int Id_satff) {
             if ((first_name == null)) {
                 throw new global::System.ArgumentNullException("first_name");
             }
@@ -9400,32 +9397,32 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(patronymic));
             }
-            if ((log == null)) {
-                throw new global::System.ArgumentNullException("log");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(log));
-            }
-            if ((pass == null)) {
-                throw new global::System.ArgumentNullException("pass");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(pass));
-            }
             if ((email == null)) {
                 throw new global::System.ArgumentNullException("email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(email));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(email));
             }
             if ((telephone == null)) {
                 throw new global::System.ArgumentNullException("telephone");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(telephone));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(telephone));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id_staff_type_staff));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(online));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Id_staff_type_staff));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(online));
+            if ((log == null)) {
+                throw new global::System.ArgumentNullException("log");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(log));
+            }
+            if ((pass == null)) {
+                throw new global::System.ArgumentNullException("pass");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(pass));
+            }
             this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Id_satff));
             this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id_staff_type_staff));
             this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_online));
@@ -9450,8 +9447,8 @@ SELECT Id_satff, first_name, second_name, patronymic, [log], pass, email, teleph
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string first_name, string second_name, string patronymic, string log, string pass, string email, string telephone, int Id_staff_type_staff, bool online, int Original_Id_satff, int Original_Id_staff_type_staff, bool Original_online) {
-            return this.Update(first_name, second_name, patronymic, log, pass, email, telephone, Id_staff_type_staff, online, Original_Id_satff, Original_Id_staff_type_staff, Original_online, Original_Id_satff);
+        public virtual int Update(string first_name, string second_name, string patronymic, string email, string telephone, int Id_staff_type_staff, bool online, string log, string pass, int Original_Id_satff, int Original_Id_staff_type_staff, bool Original_online) {
+            return this.Update(first_name, second_name, patronymic, email, telephone, Id_staff_type_staff, online, log, pass, Original_Id_satff, Original_Id_staff_type_staff, Original_online, Original_Id_satff);
         }
     }
     
@@ -11488,30 +11485,12 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eventsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.events.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eventsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._message_categoriesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.message_categories.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._message_categoriesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._type_messageTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.type_message.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._type_messageTableAdapter.Update(updatedRows));
+                    result = (result + this._userTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11524,39 +11503,30 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._type_messageTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.type_message.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(updatedRows));
+                    result = (result + this._type_messageTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._messagesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.messages.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._message_categoriesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.message_categories.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._messagesTableAdapter.Update(updatedRows));
+                    result = (result + this._message_categoriesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._popular_groupTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.popular_group.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eventsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.events.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._popular_groupTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._staffTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._staffTableAdapter.Update(updatedRows));
+                    result = (result + this._eventsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11569,12 +11539,39 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._message_processingTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.message_processing.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._staffTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._message_processingTableAdapter.Update(updatedRows));
+                    result = (result + this._staffTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._popular_groupTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.popular_group.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._popular_groupTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._messagesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.messages.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._messagesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._staff_eventTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.staff_event.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._staff_eventTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11587,12 +11584,12 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._staff_eventTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.staff_event.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._message_processingTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.message_processing.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._staff_eventTableAdapter.Update(updatedRows));
+                    result = (result + this._message_processingTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11614,27 +11611,11 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eventsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.events.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eventsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._message_categoriesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.message_categories.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._message_categoriesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._type_messageTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.type_message.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._type_messageTableAdapter.Update(addedRows));
+                    result = (result + this._userTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11646,35 +11627,27 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._type_messageTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.type_message.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(addedRows));
+                    result = (result + this._type_messageTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._messagesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.messages.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._message_categoriesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.message_categories.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._messagesTableAdapter.Update(addedRows));
+                    result = (result + this._message_categoriesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._popular_groupTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.popular_group.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eventsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.events.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._popular_groupTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._staffTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._staffTableAdapter.Update(addedRows));
+                    result = (result + this._eventsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11686,11 +11659,35 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._message_processingTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.message_processing.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._staffTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._message_processingTableAdapter.Update(addedRows));
+                    result = (result + this._staffTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._popular_groupTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.popular_group.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._popular_groupTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._messagesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.messages.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._messagesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._staff_eventTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.staff_event.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._staff_eventTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11702,11 +11699,11 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._staff_eventTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.staff_event.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._message_processingTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.message_processing.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._staff_eventTableAdapter.Update(addedRows));
+                    result = (result + this._message_processingTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11720,11 +11717,11 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(dbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._staff_eventTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.staff_event.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._message_processingTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.message_processing.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._staff_eventTableAdapter.Update(deletedRows));
+                    result = (result + this._message_processingTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11736,35 +11733,11 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._message_processingTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.message_processing.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._staff_eventTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.staff_event.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._message_processingTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._status_messageTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.status_message.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._status_messageTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._staffTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._staffTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._popular_groupTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.popular_group.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._popular_groupTableAdapter.Update(deletedRows));
+                    result = (result + this._staff_eventTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11776,27 +11749,35 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._popular_groupTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.popular_group.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(deletedRows));
+                    result = (result + this._popular_groupTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._type_staffTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.type_staff.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._staffTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._type_staffTableAdapter.Update(deletedRows));
+                    result = (result + this._staffTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._type_messageTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.type_message.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._status_messageTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.status_message.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._type_messageTableAdapter.Update(deletedRows));
+                    result = (result + this._status_messageTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eventsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.events.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eventsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11808,11 +11789,27 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._eventsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.events.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._type_messageTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.type_message.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._eventsTableAdapter.Update(deletedRows));
+                    result = (result + this._type_messageTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._type_staffTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.type_staff.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._type_staffTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.user.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._userTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
