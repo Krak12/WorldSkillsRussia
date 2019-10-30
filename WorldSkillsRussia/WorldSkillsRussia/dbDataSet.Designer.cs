@@ -6808,12 +6808,18 @@ SELECT Id_events, name, description, datatime_begin, datatime_end, year FROM eve
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id_events, name, description, datatime_begin, datatime_end, year FROM dbo." +
                 "events";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Id_events, name, description, datatime_begin, datatime_end, year\r\nF" +
+                "ROM            events\r\nWHERE        (name = @name)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6835,6 +6841,23 @@ SELECT Id_events, name, description, datatime_begin, datatime_end, year FROM eve
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dbDataSet.eventsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dbDataSet.eventsDataTable dataTable = new dbDataSet.eventsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dbDataSet.eventsDataTable GetDataByEventName(string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
             dbDataSet.eventsDataTable dataTable = new dbDataSet.eventsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

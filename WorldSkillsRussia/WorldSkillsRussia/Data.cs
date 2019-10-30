@@ -8,6 +8,7 @@ namespace WorldSkillsRussia
 {
     class Data
     {
+        public static dbDataSet.eventsRow Events;
         public static dbDataSet.staffRow staffAutorized;
         public static long staffID;
     }

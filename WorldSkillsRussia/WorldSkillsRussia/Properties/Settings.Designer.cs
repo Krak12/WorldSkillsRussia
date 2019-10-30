@@ -12,7 +12,7 @@ namespace WorldSkillsRussia.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,9 +26,9 @@ namespace WorldSkillsRussia.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=GLEB\\SQLEXPRESS;Initial Catalog=\"AADAA90047EAA3CA96304A3CE8A6A7E7_NS\\" +
-            "PROJECT CALL2PRESIDENT\\CALL2PRESIDENT DEFECTED DB\\CALL2PRESIDENT\\APP_DATA\\CALL2P" +
-            "RESIDENT.MDF\";Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-P66TBKB\\SQLEXPRESS;Initial Catalog=\"AADAA90047EAA3CA96304A3CE" +
+            "8A6A7E7_NS\\PROJECT CALL2PRESIDENT\\CALL2PRESIDENT DEFECTED DB\\CALL2PRESIDENT\\APP_" +
+            "DATA\\CALL2PRESIDENT.MDF\";Integrated Security=True")]
         public string dbConnectionString {
             get {
                 return ((string)(this["dbConnectionString"]));

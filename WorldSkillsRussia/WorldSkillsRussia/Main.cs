@@ -24,8 +24,9 @@ namespace WorldSkillsRussia
 
             textBox3.UseSystemPasswordChar = true;
 
-            string eventname = 
-            textBox1.Text = 
+            //textBox1.Text = Data.Events.name;
+            //textBox4.Text = Data.Events.year.ToString();
+            //textBox5.Text = Data.Events.description;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -110,12 +111,22 @@ namespace WorldSkillsRussia
                 Show();
             }
             else Close();
+
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox1.Text = (sender as ComboBox).SelectedItem.ToString();
             textBox4.Text = (sender as ComboBox).SelectedItem.ToString();
+            textBox5.Text = (sender as ComboBox).SelectedItem.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Data.Events.name = textBox1.Text;
+            Data.Events.description = textBox5.Text;
+            Data.Events.year = int.Parse(textBox4.Text);
         }
     }
 }
