@@ -57,6 +57,7 @@
             this.comboBox1.Size = new System.Drawing.Size(212, 39);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Id_events";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // eventsBindingSource
             // 
@@ -105,7 +106,7 @@
             this.textBox5.Location = new System.Drawing.Point(32, 189);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(343, 272);
+            this.textBox5.Size = new System.Drawing.Size(343, 271);
             this.textBox5.TabIndex = 5;
             // 
             // button1
@@ -130,14 +131,14 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(32, 536);
+            this.textBox6.Location = new System.Drawing.Point(32, 501);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(633, 38);
             this.textBox6.TabIndex = 8;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(32, 619);
+            this.textBox7.Location = new System.Drawing.Point(32, 579);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(1136, 38);
             this.textBox7.TabIndex = 9;
@@ -157,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
-            this.ClientSize = new System.Drawing.Size(1200, 667);
+            this.ClientSize = new System.Drawing.Size(1200, 631);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -171,6 +172,8 @@
             this.Controls.Add(this.comboBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
             this.Text = "Главная страница";
             this.Load += new System.EventHandler(this.Form1_Load);

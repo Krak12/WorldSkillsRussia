@@ -23,6 +23,9 @@ namespace WorldSkillsRussia
             this.eventsTableAdapter.Fill(this.dbDataSet.events);
 
             textBox3.UseSystemPasswordChar = true;
+
+            string eventname = 
+            textBox1.Text = 
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -107,6 +110,12 @@ namespace WorldSkillsRussia
                 Show();
             }
             else Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = (sender as ComboBox).SelectedItem.ToString();
+            textBox4.Text = (sender as ComboBox).SelectedItem.ToString();
         }
     }
 }
