@@ -45,8 +45,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dbDataSet = new WorldSkillsRussia.dbDataSet();
             this.federaldistrictsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new WorldSkillsRussia.dbDataSet();
             this.federal_districtsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.federal_districtsTableAdapter();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -54,13 +54,17 @@
             this.message_categoriesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.message_categoriesTableAdapter();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
+            this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.messagesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.messagesTableAdapter();
+            this.tableAdapterManager = new WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager();
+            this.message_textListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -204,15 +208,15 @@
             this.comboBox1.TabIndex = 15;
             this.comboBox1.ValueMember = "Id_federal_districts";
             // 
-            // dbDataSet
-            // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // federaldistrictsBindingSource
             // 
             this.federaldistrictsBindingSource.DataMember = "federal_districts";
             this.federaldistrictsBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // federal_districtsTableAdapter
             // 
@@ -265,15 +269,6 @@
             this.button1.Text = "Подать обращение";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 31;
-            this.listBox1.Location = new System.Drawing.Point(404, 167);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(296, 314);
-            this.listBox1.TabIndex = 20;
-            // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
@@ -303,16 +298,53 @@
             this.button3.Text = "Загрузить видео";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // messagesBindingSource
+            // 
+            this.messagesBindingSource.DataMember = "messages";
+            this.messagesBindingSource.DataSource = this.dbDataSet;
+            // 
+            // messagesTableAdapter
+            // 
+            this.messagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.eventsTableAdapter = null;
+            this.tableAdapterManager.federal_districtsTableAdapter = this.federal_districtsTableAdapter;
+            this.tableAdapterManager.message_categoriesTableAdapter = this.message_categoriesTableAdapter;
+            this.tableAdapterManager.message_processingTableAdapter = null;
+            this.tableAdapterManager.messagesTableAdapter = this.messagesTableAdapter;
+            this.tableAdapterManager.popular_groupTableAdapter = null;
+            this.tableAdapterManager.popular_messagesTableAdapter = null;
+            this.tableAdapterManager.staff_eventTableAdapter = null;
+            this.tableAdapterManager.staffTableAdapter = null;
+            this.tableAdapterManager.status_messageTableAdapter = null;
+            this.tableAdapterManager.type_messageTableAdapter = null;
+            this.tableAdapterManager.type_staffTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.userTableAdapter = null;
+            // 
+            // message_textListBox
+            // 
+            this.message_textListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.messagesBindingSource, "message_text", true));
+            this.message_textListBox.FormattingEnabled = true;
+            this.message_textListBox.ItemHeight = 31;
+            this.message_textListBox.Location = new System.Drawing.Point(402, 167);
+            this.message_textListBox.Name = "message_textListBox";
+            this.message_textListBox.Size = new System.Drawing.Size(298, 314);
+            this.message_textListBox.TabIndex = 24;
+            // 
             // SubmissionAppeal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
             this.ClientSize = new System.Drawing.Size(1200, 630);
+            this.Controls.Add(this.message_textListBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.comboBox2);
@@ -341,9 +373,10 @@
             this.Name = "SubmissionAppeal";
             this.Text = "Подача обращения";
             this.Load += new System.EventHandler(this.SubmissionAppeal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,9 +409,12 @@
         private dbDataSetTableAdapters.message_categoriesTableAdapter message_categoriesTableAdapter;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource messagesBindingSource;
+        private dbDataSetTableAdapters.messagesTableAdapter messagesTableAdapter;
+        private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ListBox message_textListBox;
     }
 }

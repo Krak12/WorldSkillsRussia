@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopularAppeals));
             System.Windows.Forms.Label contentLabel;
             System.Windows.Forms.Label message_textLabel;
             System.Windows.Forms.Label federal_districtsLabel;
@@ -40,40 +39,52 @@
             this.popular_groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.popular_groupTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.popular_groupTableAdapter();
             this.tableAdapterManager = new WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager();
-            this.popular_groupBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.popular_groupBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.federal_districtsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.federal_districtsTableAdapter();
+            this.messagesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.messagesTableAdapter();
             this.contentComboBox = new System.Windows.Forms.ComboBox();
             this.populargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.messagesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.messagesTableAdapter();
             this.message_textTextBox = new System.Windows.Forms.TextBox();
             this.federal_districtsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.federal_districtsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.federal_districtsTableAdapter();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.media_contentListBox = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             contentLabel = new System.Windows.Forms.Label();
             message_textLabel = new System.Windows.Forms.Label();
             federal_districtsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popular_groupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popular_groupBindingNavigator)).BeginInit();
-            this.popular_groupBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.federal_districtsBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // contentLabel
+            // 
+            contentLabel.Location = new System.Drawing.Point(22, 307);
+            contentLabel.Name = "contentLabel";
+            contentLabel.Size = new System.Drawing.Size(172, 64);
+            contentLabel.TabIndex = 4;
+            contentLabel.Text = "Популярная группа";
+            // 
+            // message_textLabel
+            // 
+            message_textLabel.Location = new System.Drawing.Point(194, 307);
+            message_textLabel.Name = "message_textLabel";
+            message_textLabel.Size = new System.Drawing.Size(183, 64);
+            message_textLabel.TabIndex = 7;
+            message_textLabel.Text = "Обращение";
+            // 
+            // federal_districtsLabel
+            // 
+            federal_districtsLabel.Location = new System.Drawing.Point(374, 307);
+            federal_districtsLabel.Name = "federal_districtsLabel";
+            federal_districtsLabel.Size = new System.Drawing.Size(206, 64);
+            federal_districtsLabel.TabIndex = 8;
+            federal_districtsLabel.Text = "Федеральный округ";
             // 
             // label1
             // 
@@ -131,137 +142,13 @@
             this.tableAdapterManager.UpdateOrder = WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
             // 
-            // popular_groupBindingNavigator
+            // federal_districtsTableAdapter
             // 
-            this.popular_groupBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.popular_groupBindingNavigator.BindingSource = this.popular_groupBindingSource;
-            this.popular_groupBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.popular_groupBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.popular_groupBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.popular_groupBindingNavigatorSaveItem});
-            this.popular_groupBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.popular_groupBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.popular_groupBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.popular_groupBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.popular_groupBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.popular_groupBindingNavigator.Name = "popular_groupBindingNavigator";
-            this.popular_groupBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.popular_groupBindingNavigator.Size = new System.Drawing.Size(1200, 25);
-            this.popular_groupBindingNavigator.TabIndex = 4;
-            this.popular_groupBindingNavigator.Text = "bindingNavigator1";
+            this.federal_districtsTableAdapter.ClearBeforeFill = true;
             // 
-            // bindingNavigatorMoveFirstItem
+            // messagesTableAdapter
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            // 
-            // popular_groupBindingNavigatorSaveItem
-            // 
-            this.popular_groupBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.popular_groupBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("popular_groupBindingNavigatorSaveItem.Image")));
-            this.popular_groupBindingNavigatorSaveItem.Name = "popular_groupBindingNavigatorSaveItem";
-            this.popular_groupBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.popular_groupBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.popular_groupBindingNavigatorSaveItem.Click += new System.EventHandler(this.popular_groupBindingNavigatorSaveItem_Click);
-            // 
-            // contentLabel
-            // 
-            contentLabel.Location = new System.Drawing.Point(22, 307);
-            contentLabel.Name = "contentLabel";
-            contentLabel.Size = new System.Drawing.Size(172, 64);
-            contentLabel.TabIndex = 4;
-            contentLabel.Text = "Популярная группа";
+            this.messagesTableAdapter.ClearBeforeFill = true;
             // 
             // contentComboBox
             // 
@@ -285,18 +172,6 @@
             this.messagesBindingSource.DataMember = "messages";
             this.messagesBindingSource.DataSource = this.dbDataSet;
             // 
-            // messagesTableAdapter
-            // 
-            this.messagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // message_textLabel
-            // 
-            message_textLabel.Location = new System.Drawing.Point(194, 307);
-            message_textLabel.Name = "message_textLabel";
-            message_textLabel.Size = new System.Drawing.Size(183, 64);
-            message_textLabel.TabIndex = 7;
-            message_textLabel.Text = "Обращение";
-            // 
             // message_textTextBox
             // 
             this.message_textTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.messagesBindingSource, "message_text", true));
@@ -309,18 +184,6 @@
             // 
             this.federal_districtsBindingSource.DataMember = "federal_districts";
             this.federal_districtsBindingSource.DataSource = this.dbDataSet;
-            // 
-            // federal_districtsTableAdapter
-            // 
-            this.federal_districtsTableAdapter.ClearBeforeFill = true;
-            // 
-            // federal_districtsLabel
-            // 
-            federal_districtsLabel.Location = new System.Drawing.Point(374, 307);
-            federal_districtsLabel.Name = "federal_districtsLabel";
-            federal_districtsLabel.Size = new System.Drawing.Size(206, 64);
-            federal_districtsLabel.TabIndex = 8;
-            federal_districtsLabel.Text = "Федеральный округ";
             // 
             // comboBox2
             // 
@@ -349,12 +212,41 @@
             this.comboBox3.Size = new System.Drawing.Size(131, 39);
             this.comboBox3.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(868, 196);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 54);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Голосовать";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // media_contentListBox
+            // 
+            this.media_contentListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.messagesBindingSource, "media_content", true));
+            this.media_contentListBox.FormattingEnabled = true;
+            this.media_contentListBox.ItemHeight = 31;
+            this.media_contentListBox.Location = new System.Drawing.Point(732, 256);
+            this.media_contentListBox.Name = "media_contentListBox";
+            this.media_contentListBox.Size = new System.Drawing.Size(442, 314);
+            this.media_contentListBox.TabIndex = 14;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(732, 576);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(442, 38);
+            this.textBox1.TabIndex = 15;
+            // 
             // PopularAppeals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
             this.ClientSize = new System.Drawing.Size(1200, 631);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.media_contentListBox);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox2);
@@ -363,7 +255,6 @@
             this.Controls.Add(this.message_textTextBox);
             this.Controls.Add(this.contentComboBox);
             this.Controls.Add(contentLabel);
-            this.Controls.Add(this.popular_groupBindingNavigator);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -374,9 +265,6 @@
             this.Load += new System.EventHandler(this.PopularAppeals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popular_groupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popular_groupBindingNavigator)).EndInit();
-            this.popular_groupBindingNavigator.ResumeLayout(false);
-            this.popular_groupBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.federal_districtsBindingSource)).EndInit();
@@ -394,19 +282,6 @@
         private System.Windows.Forms.BindingSource popular_groupBindingSource;
         private dbDataSetTableAdapters.popular_groupTableAdapter popular_groupTableAdapter;
         private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator popular_groupBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton popular_groupBindingNavigatorSaveItem;
         private dbDataSetTableAdapters.messagesTableAdapter messagesTableAdapter;
         private System.Windows.Forms.ComboBox contentComboBox;
         private System.Windows.Forms.BindingSource populargroupBindingSource;
@@ -417,5 +292,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox media_contentListBox;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

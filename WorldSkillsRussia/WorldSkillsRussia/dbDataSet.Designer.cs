@@ -6850,7 +6850,7 @@ SELECT Id_events, name, description, datatime_begin, datatime_end, year FROM eve
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dbDataSet.eventsDataTable GetDataByEventName(string name) {
+        public virtual dbDataSet.eventsDataTable GetDataByName(string name) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");

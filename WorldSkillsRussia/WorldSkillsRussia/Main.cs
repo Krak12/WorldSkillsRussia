@@ -24,9 +24,12 @@ namespace WorldSkillsRussia
 
             textBox3.UseSystemPasswordChar = true;
 
-            //textBox1.Text = Data.Events.name;
-            //textBox4.Text = Data.Events.year.ToString();
-            //textBox5.Text = Data.Events.description;
+            var eventTA = new dbDataSetTableAdapters.eventsTableAdapter();
+            Data.Events = eventTA.GetDataByName(comboBox1.Text.Trim()).First();
+
+            textBox1.Text = Data.Events.name;
+            textBox4.Text = Data.Events.year.ToString();
+            textBox5.Text = Data.Events.description;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace WorldSkillsRussia
             if (staffs.Count == 0)
             {
                 MessageBox.Show("Неверный логин или пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             // переходы по формам, зависящие от Id_staff_type_staff
@@ -111,22 +115,6 @@ namespace WorldSkillsRussia
                 Show();
             }
             else Close();
-
-            
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = (sender as ComboBox).SelectedItem.ToString();
-            textBox4.Text = (sender as ComboBox).SelectedItem.ToString();
-            textBox5.Text = (sender as ComboBox).SelectedItem.ToString();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Data.Events.name = textBox1.Text;
-            Data.Events.description = textBox5.Text;
-            Data.Events.year = int.Parse(textBox4.Text);
         }
     }
 }
