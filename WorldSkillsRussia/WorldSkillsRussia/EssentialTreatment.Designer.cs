@@ -35,14 +35,14 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dbDataSet = new WorldSkillsRussia.dbDataSet();
-            this.populargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.popular_groupTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.popular_groupTableAdapter();
             this.messagecategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.message_categoriesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.message_categoriesTableAdapter();
+            this.dbDataSet = new WorldSkillsRussia.dbDataSet();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.populargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.federaldistrictsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.popular_groupTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.popular_groupTableAdapter();
+            this.message_categoriesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.message_categoriesTableAdapter();
             this.federal_districtsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.federal_districtsTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,9 +50,11 @@
             this.tableAdapterManager = new WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager();
             this.message_textListBox = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +109,16 @@
             this.comboBox1.TabIndex = 16;
             this.comboBox1.ValueMember = "Id_message_categories";
             // 
+            // messagecategoriesBindingSource
+            // 
+            this.messagecategoriesBindingSource.DataMember = "message_categories";
+            this.messagecategoriesBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.populargroupBindingSource;
@@ -117,6 +129,11 @@
             this.comboBox2.Size = new System.Drawing.Size(320, 39);
             this.comboBox2.TabIndex = 17;
             this.comboBox2.ValueMember = "Id_popular_group";
+            // 
+            // populargroupBindingSource
+            // 
+            this.populargroupBindingSource.DataMember = "popular_group";
+            this.populargroupBindingSource.DataSource = this.dbDataSet;
             // 
             // comboBox3
             // 
@@ -129,33 +146,18 @@
             this.comboBox3.TabIndex = 18;
             this.comboBox3.ValueMember = "Id_federal_districts";
             // 
-            // dbDataSet
+            // federaldistrictsBindingSource
             // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // populargroupBindingSource
-            // 
-            this.populargroupBindingSource.DataMember = "popular_group";
-            this.populargroupBindingSource.DataSource = this.dbDataSet;
+            this.federaldistrictsBindingSource.DataMember = "federal_districts";
+            this.federaldistrictsBindingSource.DataSource = this.dbDataSet;
             // 
             // popular_groupTableAdapter
             // 
             this.popular_groupTableAdapter.ClearBeforeFill = true;
             // 
-            // messagecategoriesBindingSource
-            // 
-            this.messagecategoriesBindingSource.DataMember = "message_categories";
-            this.messagecategoriesBindingSource.DataSource = this.dbDataSet;
-            // 
             // message_categoriesTableAdapter
             // 
             this.message_categoriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // federaldistrictsBindingSource
-            // 
-            this.federaldistrictsBindingSource.DataMember = "federal_districts";
-            this.federaldistrictsBindingSource.DataSource = this.dbDataSet;
             // 
             // federal_districtsTableAdapter
             // 
@@ -216,12 +218,30 @@
             this.button2.Text = "Потметить как отвечен ";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(154, 478);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(183, 62);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Догрузить";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 563);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(500, 38);
+            this.textBox1.TabIndex = 23;
+            // 
             // EssentialTreatment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
             this.ClientSize = new System.Drawing.Size(1200, 631);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.message_textListBox);
             this.Controls.Add(this.listBox1);
@@ -238,9 +258,9 @@
             this.Name = "EssentialTreatment";
             this.Text = "Эфирные обращения";
             this.Load += new System.EventHandler(this.EssentialTreatment_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -271,5 +291,7 @@
         private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ListBox message_textListBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

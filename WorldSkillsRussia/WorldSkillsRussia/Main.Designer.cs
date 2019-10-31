@@ -33,7 +33,6 @@
             this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new WorldSkillsRussia.dbDataSet();
             this.eventsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.eventsTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +57,6 @@
             this.comboBox1.Size = new System.Drawing.Size(212, 39);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Id_events";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // eventsBindingSource
             // 
@@ -72,13 +71,6 @@
             // eventsTableAdapter
             // 
             this.eventsTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(332, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(677, 38);
-            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
@@ -153,12 +145,20 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(327, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(683, 34);
+            this.label1.TabIndex = 11;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
             this.ClientSize = new System.Drawing.Size(1200, 631);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -168,7 +168,6 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -190,7 +189,6 @@
         private dbDataSet dbDataSet;
         private System.Windows.Forms.BindingSource eventsBindingSource;
         private dbDataSetTableAdapters.eventsTableAdapter eventsTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
@@ -200,6 +198,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -10,6 +10,7 @@ namespace WorldSkillsRussia
     {
         public static dbDataSet.eventsRow Events;
         public static dbDataSet.staffRow staffAutorized;
+        public static dbDataSet.userRow User;
         public static long staffID;
     }
 }

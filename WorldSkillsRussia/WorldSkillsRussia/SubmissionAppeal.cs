@@ -26,6 +26,18 @@ namespace WorldSkillsRussia
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.federal_districts". При необходимости она может быть перемещена или удалена.
             this.federal_districtsTableAdapter.Fill(this.dbDataSet.federal_districts);
 
+            label1.Text = Data.Events.name;
+
+            var userTA = new dbDataSetTableAdapters.userTableAdapter();
+            Data.User = userTA.GetDataByFederalDistricts(comboBox1.Text.Trim()).First();
+
+            Data.User.first_name = textBox1.Text;
+            Data.User.second_name = textBox2.Text;
+            Data.User.patronymic = textBox3.Text;
+            Data.User.telephone = textBox4.Text;
+            Data.User.email = textBox5.Text;
+            Data.User.age = int.Parse(textBox6.Text);
+
         }
     }
 }

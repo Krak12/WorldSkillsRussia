@@ -27,7 +27,7 @@ namespace WorldSkillsRussia
             var eventTA = new dbDataSetTableAdapters.eventsTableAdapter();
             Data.Events = eventTA.GetDataByName(comboBox1.Text.Trim()).First();
 
-            textBox1.Text = Data.Events.name;
+            label1.Text = Data.Events.name;
             textBox4.Text = Data.Events.year.ToString();
             textBox5.Text = Data.Events.description;
         }

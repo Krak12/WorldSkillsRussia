@@ -16,5 +16,20 @@ namespace WorldSkillsRussia
         {
             InitializeComponent();
         }
+
+        private void staffBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.staffBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dbDataSet);
+
+        }
+
+        private void EventManagement_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.staff". При необходимости она может быть перемещена или удалена.
+            this.staffTableAdapter.Fill(this.dbDataSet.staff);
+
+        }
     }
 }
