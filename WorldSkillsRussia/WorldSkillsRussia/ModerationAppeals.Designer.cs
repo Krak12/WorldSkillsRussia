@@ -45,7 +45,6 @@
             this.status_messageTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.status_messageTableAdapter();
             this.messagesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.messagesTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tableAdapterManager = new WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager();
@@ -63,6 +62,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).BeginInit();
@@ -180,13 +180,6 @@
             this.listBox1.Size = new System.Drawing.Size(216, 252);
             this.listBox1.TabIndex = 6;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(281, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(661, 38);
-            this.textBox3.TabIndex = 7;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1047, 19);
@@ -195,6 +188,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -335,12 +329,20 @@
             this.button6.Text = "в группу популярных";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(279, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(667, 34);
+            this.label2.TabIndex = 20;
+            // 
             // ModerationAppeals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
             this.ClientSize = new System.Drawing.Size(1200, 626);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -353,7 +355,6 @@
             this.Controls.Add(this.message_textListBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
@@ -396,7 +397,6 @@
         private System.Windows.Forms.BindingSource messagesBindingSource;
         private dbDataSetTableAdapters.messagesTableAdapter messagesTableAdapter;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -414,5 +414,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label2;
     }
 }

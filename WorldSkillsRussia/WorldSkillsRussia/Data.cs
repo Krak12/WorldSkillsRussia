@@ -12,6 +12,7 @@ namespace WorldSkillsRussia
         public static dbDataSet.staffRow staffAutorized;
         public static dbDataSet.userRow User;
         public static dbDataSet.messagesRow Messages;
+        public static dbDataSet.type_staffRow TypeStaff;
         public static long staffID;
     }
 }

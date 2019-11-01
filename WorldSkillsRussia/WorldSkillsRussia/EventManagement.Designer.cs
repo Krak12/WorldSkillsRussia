@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.staffListBox = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,13 +54,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(281, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(661, 38);
-            this.textBox4.TabIndex = 22;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox5
             // 
@@ -151,19 +145,26 @@
             this.textBox10.Size = new System.Drawing.Size(457, 38);
             this.textBox10.TabIndex = 43;
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(287, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(661, 34);
+            this.label2.TabIndex = 44;
+            // 
             // EventManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
             this.ClientSize = new System.Drawing.Size(1199, 631);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.staffListBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -181,7 +182,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label1;
@@ -193,5 +193,6 @@
         private System.Windows.Forms.ListBox staffListBox;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label2;
     }
 }

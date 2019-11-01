@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.message_textListBox = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.federaldistrictsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new WorldSkillsRussia.dbDataSet();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -49,20 +50,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dbDataSet = new WorldSkillsRussia.dbDataSet();
-            this.federaldistrictsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.federal_districtsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.federal_districtsTableAdapter();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.messagecategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.message_categoriesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.message_categoriesTableAdapter();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.populargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.message_categoriesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.message_categoriesTableAdapter();
             this.popular_groupTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.popular_groupTableAdapter();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -84,13 +84,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(281, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(661, 38);
-            this.textBox4.TabIndex = 18;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox5
             // 
@@ -125,6 +119,16 @@
             this.comboBox1.Size = new System.Drawing.Size(203, 39);
             this.comboBox1.TabIndex = 38;
             this.comboBox1.ValueMember = "Id_federal_districts";
+            // 
+            // federaldistrictsBindingSource
+            // 
+            this.federaldistrictsBindingSource.DataMember = "federal_districts";
+            this.federaldistrictsBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox1
             // 
@@ -238,16 +242,6 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Фамилия";
             // 
-            // dbDataSet
-            // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // federaldistrictsBindingSource
-            // 
-            this.federaldistrictsBindingSource.DataMember = "federal_districts";
-            this.federaldistrictsBindingSource.DataSource = this.dbDataSet;
-            // 
             // federal_districtsTableAdapter
             // 
             this.federal_districtsTableAdapter.ClearBeforeFill = true;
@@ -263,6 +257,11 @@
             this.comboBox2.TabIndex = 40;
             this.comboBox2.ValueMember = "Id_message_categories";
             // 
+            // messagecategoriesBindingSource
+            // 
+            this.messagecategoriesBindingSource.DataMember = "message_categories";
+            this.messagecategoriesBindingSource.DataSource = this.dbDataSet;
+            // 
             // comboBox3
             // 
             this.comboBox3.DataSource = this.populargroupBindingSource;
@@ -274,19 +273,14 @@
             this.comboBox3.TabIndex = 41;
             this.comboBox3.ValueMember = "Id_popular_group";
             // 
-            // messagecategoriesBindingSource
-            // 
-            this.messagecategoriesBindingSource.DataMember = "message_categories";
-            this.messagecategoriesBindingSource.DataSource = this.dbDataSet;
-            // 
-            // message_categoriesTableAdapter
-            // 
-            this.message_categoriesTableAdapter.ClearBeforeFill = true;
-            // 
             // populargroupBindingSource
             // 
             this.populargroupBindingSource.DataMember = "popular_group";
             this.populargroupBindingSource.DataSource = this.dbDataSet;
+            // 
+            // message_categoriesTableAdapter
+            // 
+            this.message_categoriesTableAdapter.ClearBeforeFill = true;
             // 
             // popular_groupTableAdapter
             // 
@@ -317,12 +311,20 @@
             this.button3.Text = "Указать как популярное";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(275, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(661, 34);
+            this.label2.TabIndex = 45;
+            // 
             // Reception
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
             this.ClientSize = new System.Drawing.Size(1200, 631);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox10);
@@ -345,7 +347,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -353,8 +354,8 @@
             this.Name = "Reception";
             this.Text = "Прием обращений";
             this.Load += new System.EventHandler(this.Reception_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -366,7 +367,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.ListBox message_textListBox;
@@ -396,5 +396,6 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
     }
 }
