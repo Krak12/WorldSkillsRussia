@@ -34,6 +34,7 @@ namespace WorldSkillsRussia
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.message_categories". При необходимости она может быть перемещена или удалена.
             this.message_categoriesTableAdapter.Fill(this.dbDataSet.message_categories);
 
+            message_textListBox.SelectedItem = Data.Messages.message_text;
         }
     }
 }

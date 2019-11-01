@@ -52,6 +52,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.media_contentListBox = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.populargroupBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             contentLabel = new System.Windows.Forms.Label();
             message_textLabel = new System.Windows.Forms.Label();
             federal_districtsLabel = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.federal_districtsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // contentLabel
@@ -104,11 +106,14 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.populargroupBindingSource1;
+            this.comboBox1.DisplayMember = "content";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(252, 252);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(248, 39);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.ValueMember = "Id_popular_group";
             // 
             // dbDataSet
             // 
@@ -238,6 +243,11 @@
             this.textBox1.Size = new System.Drawing.Size(442, 38);
             this.textBox1.TabIndex = 15;
             // 
+            // populargroupBindingSource1
+            // 
+            this.populargroupBindingSource1.DataMember = "popular_group";
+            this.populargroupBindingSource1.DataSource = this.dbDataSet;
+            // 
             // PopularAppeals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -268,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.federal_districtsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +306,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox media_contentListBox;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource populargroupBindingSource1;
     }
 }

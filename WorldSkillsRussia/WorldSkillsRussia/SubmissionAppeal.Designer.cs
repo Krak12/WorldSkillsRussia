@@ -47,31 +47,37 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.federaldistrictsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new WorldSkillsRussia.dbDataSet();
-            this.federal_districtsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.federal_districtsTableAdapter();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.messagecategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.message_categoriesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.message_categoriesTableAdapter();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.message_textListBox = new System.Windows.Forms.ListBox();
             this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.federal_districtsTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.federal_districtsTableAdapter();
+            this.message_categoriesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.message_categoriesTableAdapter();
             this.messagesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.messagesTableAdapter();
             this.tableAdapterManager = new WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager();
-            this.message_textListBox = new System.Windows.Forms.ListBox();
+            this.userTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.userTableAdapter();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(296, 53);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(256, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(546, 34);
+            this.label1.Size = new System.Drawing.Size(601, 34);
             this.label1.TabIndex = 0;
             // 
             // label2
@@ -218,10 +224,6 @@
             this.dbDataSet.DataSetName = "dbDataSet";
             this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // federal_districtsTableAdapter
-            // 
-            this.federal_districtsTableAdapter.ClearBeforeFill = true;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -247,10 +249,6 @@
             // 
             this.messagecategoriesBindingSource.DataMember = "message_categories";
             this.messagecategoriesBindingSource.DataSource = this.dbDataSet;
-            // 
-            // message_categoriesTableAdapter
-            // 
-            this.message_categoriesTableAdapter.ClearBeforeFill = true;
             // 
             // textBox7
             // 
@@ -298,10 +296,44 @@
             this.button3.Text = "Загрузить видео";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // message_textListBox
+            // 
+            this.message_textListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.messagesBindingSource, "message_text", true));
+            this.message_textListBox.FormattingEnabled = true;
+            this.message_textListBox.ItemHeight = 31;
+            this.message_textListBox.Location = new System.Drawing.Point(402, 167);
+            this.message_textListBox.Name = "message_textListBox";
+            this.message_textListBox.Size = new System.Drawing.Size(298, 314);
+            this.message_textListBox.TabIndex = 24;
+            // 
             // messagesBindingSource
             // 
             this.messagesBindingSource.DataMember = "messages";
             this.messagesBindingSource.DataSource = this.dbDataSet;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.userBindingSource;
+            this.comboBox3.DisplayMember = "first_name";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(216, 442);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 39);
+            this.comboBox3.TabIndex = 25;
+            this.comboBox3.ValueMember = "Id_user";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "user";
+            this.userBindingSource.DataSource = this.dbDataSet;
+            // 
+            // federal_districtsTableAdapter
+            // 
+            this.federal_districtsTableAdapter.ClearBeforeFill = true;
+            // 
+            // message_categoriesTableAdapter
+            // 
+            this.message_categoriesTableAdapter.ClearBeforeFill = true;
             // 
             // messagesTableAdapter
             // 
@@ -325,15 +357,20 @@
             this.tableAdapterManager.UpdateOrder = WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
             // 
-            // message_textListBox
+            // userTableAdapter
             // 
-            this.message_textListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.messagesBindingSource, "message_text", true));
-            this.message_textListBox.FormattingEnabled = true;
-            this.message_textListBox.ItemHeight = 31;
-            this.message_textListBox.Location = new System.Drawing.Point(402, 167);
-            this.message_textListBox.Name = "message_textListBox";
-            this.message_textListBox.Size = new System.Drawing.Size(298, 314);
-            this.message_textListBox.TabIndex = 24;
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DataSource = this.messagesBindingSource;
+            this.comboBox4.DisplayMember = "message_text";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(238, 442);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 39);
+            this.comboBox4.TabIndex = 26;
+            this.comboBox4.ValueMember = "Id_message";
             // 
             // SubmissionAppeal
             // 
@@ -365,6 +402,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBox3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -377,6 +416,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,5 +456,9 @@
         private dbDataSetTableAdapters.messagesTableAdapter messagesTableAdapter;
         private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ListBox message_textListBox;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private dbDataSetTableAdapters.userTableAdapter userTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }

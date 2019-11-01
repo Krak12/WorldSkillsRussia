@@ -8130,13 +8130,20 @@ SELECT Id_message, datatime, Id_message_user, Id_message_type_message, message_t
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id_message, datatime, Id_message_user, Id_message_type_message, message_te" +
                 "xt, Id_message_event, media_content, processed, Id_message_message_categories FR" +
                 "OM dbo.messages";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Id_message, datatime, Id_message_user, Id_message_type_message, mes" +
+                "sage_text, Id_message_event, media_content, processed, Id_message_message_catego" +
+                "ries\r\nFROM            messages\r\nWHERE        (message_text = @text)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@text", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "message_text", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8158,6 +8165,23 @@ SELECT Id_message, datatime, Id_message_user, Id_message_type_message, message_t
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dbDataSet.messagesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dbDataSet.messagesDataTable dataTable = new dbDataSet.messagesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dbDataSet.messagesDataTable GetDataByMessageText(string text) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((text == null)) {
+                throw new global::System.ArgumentNullException("text");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(text));
+            }
             dbDataSet.messagesDataTable dataTable = new dbDataSet.messagesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10882,10 +10906,10 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        Id_user, first_name, second_name, patronymic, telephone, email, age" +
-                ", id_user_federal_districts\r\nFROM            [user]\r\nWHERE        (id_user_feder" +
-                "al_districts = @distrits)";
+                ", id_user_federal_districts\r\nFROM            [user]\r\nWHERE        (first_name = " +
+                "@name)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@distrits", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_user_federal_districts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "first_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10916,9 +10940,14 @@ SELECT Id_user, first_name, second_name, patronymic, telephone, email, age, id_u
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dbDataSet.userDataTable GetDataByFederalDistricts(int distrits) {
+        public virtual dbDataSet.userDataTable GetDataByUserName(string name) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(distrits));
+            if ((name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
             dbDataSet.userDataTable dataTable = new dbDataSet.userDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

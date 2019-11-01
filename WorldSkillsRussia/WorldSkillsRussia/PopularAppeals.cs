@@ -34,6 +34,8 @@ namespace WorldSkillsRussia
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.popular_group". При необходимости она может быть перемещена или удалена.
             this.popular_groupTableAdapter.Fill(this.dbDataSet.popular_group);
 
+            label1.Text = Data.Events.name;
+
         }
     }
 }
