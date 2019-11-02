@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.populargroupBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new WorldSkillsRussia.dbDataSet();
             this.popular_groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.popular_groupTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.popular_groupTableAdapter();
@@ -52,16 +53,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.media_contentListBox = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.populargroupBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             contentLabel = new System.Windows.Forms.Label();
             message_textLabel = new System.Windows.Forms.Label();
             federal_districtsLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popular_groupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.federal_districtsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // contentLabel
@@ -114,6 +114,11 @@
             this.comboBox1.Size = new System.Drawing.Size(248, 39);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.ValueMember = "Id_popular_group";
+            // 
+            // populargroupBindingSource1
+            // 
+            this.populargroupBindingSource1.DataMember = "popular_group";
+            this.populargroupBindingSource1.DataSource = this.dbDataSet;
             // 
             // dbDataSet
             // 
@@ -243,11 +248,6 @@
             this.textBox1.Size = new System.Drawing.Size(442, 38);
             this.textBox1.TabIndex = 15;
             // 
-            // populargroupBindingSource1
-            // 
-            this.populargroupBindingSource1.DataMember = "popular_group";
-            this.populargroupBindingSource1.DataSource = this.dbDataSet;
-            // 
             // PopularAppeals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -271,14 +271,15 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "PopularAppeals";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Популярные обращения";
             this.Load += new System.EventHandler(this.PopularAppeals_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popular_groupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.federal_districtsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

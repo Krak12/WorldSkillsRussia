@@ -28,6 +28,13 @@ namespace WorldSkillsRussia
 
             label2.Text = Data.Events.name;
 
+            textBox8.Text = Data.User.first_name;
+            textBox9.Text = Data.User.second_name;
+            textBox7.Text = Data.User.patronymic;
+            textBox3.Text = Data.User.telephone;
+            textBox2.Text = Data.User.email;
+            textBox1.Text = Data.User.age.ToString();
+
             //message_textListBox.Text = Data.Messages.message_text;
         }
 

@@ -410,6 +410,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SubmissionAppeal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подача обращения";
             this.Load += new System.EventHandler(this.SubmissionAppeal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).EndInit();
