@@ -46,5 +46,15 @@ namespace WorldSkillsRussia
             message_textListBox.Text = Data.Messages.message_text;
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Data.User.first_name = textBox2.Text;
+            Data.User.second_name = textBox1.Text;
+            Data.User.patronymic = textBox3.Text;
+            Data.User.telephone = textBox4.Text;
+            Data.User.email = textBox4.Text;
+            Data.User.age = int.Parse(textBox6.Text);
+        }
     }
 }
