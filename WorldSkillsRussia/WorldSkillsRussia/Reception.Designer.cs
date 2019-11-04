@@ -61,10 +61,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.userTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -318,6 +322,26 @@
             this.label2.Size = new System.Drawing.Size(661, 34);
             this.label2.TabIndex = 45;
             // 
+            // comboBox4
+            // 
+            this.comboBox4.DataSource = this.userBindingSource;
+            this.comboBox4.DisplayMember = "first_name";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(185, 405);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 39);
+            this.comboBox4.TabIndex = 46;
+            this.comboBox4.ValueMember = "Id_user";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "user";
+            this.userBindingSource.DataSource = this.dbDataSet;
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
             // Reception
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -349,6 +373,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.comboBox4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Reception";
@@ -359,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +424,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private dbDataSetTableAdapters.userTableAdapter userTableAdapter;
     }
 }

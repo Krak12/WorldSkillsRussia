@@ -19,6 +19,8 @@ namespace WorldSkillsRussia
 
         private void Reception_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.user". При необходимости она может быть перемещена или удалена.
+            this.userTableAdapter.Fill(this.dbDataSet.user);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.popular_group". При необходимости она может быть перемещена или удалена.
             this.popular_groupTableAdapter.Fill(this.dbDataSet.popular_group);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.message_categories". При необходимости она может быть перемещена или удалена.
@@ -27,6 +29,9 @@ namespace WorldSkillsRussia
             this.federal_districtsTableAdapter.Fill(this.dbDataSet.federal_districts);
 
             label2.Text = Data.Events.name;
+
+            var userTA = new dbDataSetTableAdapters.userTableAdapter();
+            Data.User = userTA.GetDataByUserName(comboBox4.Text.Trim()).First();
 
             textBox8.Text = Data.User.first_name;
             textBox9.Text = Data.User.second_name;

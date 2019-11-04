@@ -39,11 +39,12 @@ namespace WorldSkillsRussia
             textBox4.Text = Data.User.telephone;
             textBox5.Text = Data.User.email;
             textBox6.Text = Data.User.age.ToString();
+            comboBox1.Text = Data.User.id_user_federal_districts.ToString();
 
-            var messageTA = new dbDataSetTableAdapters.messagesTableAdapter();
-            Data.Messages = messageTA.GetDataByMessageText(comboBox4.Text.Trim()).First();
+            //var messageTA = new dbDataSetTableAdapters.messagesTableAdapter();
+            //Data.Messages = messageTA.GetDataByMessageText(comboBox4.Text.Trim()).First();
 
-            message_textListBox.Text = Data.Messages.message_text;
+            //message_textListBox.Text = Data.Messages.message_text;
 
         }
 
@@ -55,6 +56,22 @@ namespace WorldSkillsRussia
             Data.User.telephone = textBox4.Text;
             Data.User.email = textBox4.Text;
             Data.User.age = int.Parse(textBox6.Text);
+            Data.User.id_user_federal_districts = int.Parse(comboBox1.Text);
+
+            var userTA = new dbDataSetTableAdapters.userTableAdapter();
+            userTA.Update(Data.User);
+
+            MessageBox.Show("Обращение подано успешно!", "Информация", MessageBoxButtons.OK);
+            DialogResult = DialogResult.OK;
+
+            Form m = new Main();
+            Hide();
+            DialogResult res = m.ShowDialog();
+            if (res != DialogResult.Cancel)
+            {
+                Show();
+            }
+            else Close();
         }
     }
 }
