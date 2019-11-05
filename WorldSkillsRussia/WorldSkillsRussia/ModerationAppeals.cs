@@ -19,6 +19,8 @@ namespace WorldSkillsRussia
 
         private void ModerationAppeals_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.MessageList". При необходимости она может быть перемещена или удалена.
+            this.messageListTableAdapter.FillMessageList(this.dbDataSet.MessageList);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.popular_group". При необходимости она может быть перемещена или удалена.
             this.popular_groupTableAdapter.Fill(this.dbDataSet.popular_group);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dbDataSet.user". При необходимости она может быть перемещена или удалена.

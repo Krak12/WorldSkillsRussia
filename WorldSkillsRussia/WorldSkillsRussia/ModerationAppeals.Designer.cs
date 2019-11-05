@@ -44,7 +44,6 @@
             this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.status_messageTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.status_messageTableAdapter();
             this.messagesTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.messagesTableAdapter();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tableAdapterManager = new WorldSkillsRussia.dbDataSetTableAdapters.TableAdapterManager();
@@ -63,6 +62,17 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.messageListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.messageListTableAdapter = new WorldSkillsRussia.dbDataSetTableAdapters.MessageListTableAdapter();
+            this.messageListDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.messagecategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.federaldistrictsBindingSource)).BeginInit();
@@ -70,6 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messageListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messageListDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -170,15 +182,6 @@
             // messagesTableAdapter
             // 
             this.messagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 31;
-            this.listBox1.Location = new System.Drawing.Point(12, 285);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(216, 252);
-            this.listBox1.TabIndex = 6;
             // 
             // button1
             // 
@@ -336,12 +339,91 @@
             this.label2.Size = new System.Drawing.Size(667, 34);
             this.label2.TabIndex = 20;
             // 
+            // messageListBindingSource
+            // 
+            this.messageListBindingSource.DataMember = "MessageList";
+            this.messageListBindingSource.DataSource = this.dbDataSet;
+            // 
+            // messageListTableAdapter
+            // 
+            this.messageListTableAdapter.ClearBeforeFill = true;
+            // 
+            // messageListDataGridView
+            // 
+            this.messageListDataGridView.AutoGenerateColumns = false;
+            this.messageListDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.messageListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.messageListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewCheckBoxColumn1});
+            this.messageListDataGridView.DataSource = this.messageListBindingSource;
+            this.messageListDataGridView.Location = new System.Drawing.Point(12, 297);
+            this.messageListDataGridView.Name = "messageListDataGridView";
+            this.messageListDataGridView.RowHeadersVisible = false;
+            this.messageListDataGridView.Size = new System.Drawing.Size(216, 242);
+            this.messageListDataGridView.TabIndex = 20;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "first_name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "second_name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "patronymic";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "telephone";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "age";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Возраст";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "message_categories";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Категории обращений";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "federal_districts";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Федеральные округа";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "processed";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Статус сообщения";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
             // ModerationAppeals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WorldSkillsRussia.Properties.Resources.Прямая_линия_с_Владимиром_Путиным;
-            this.ClientSize = new System.Drawing.Size(1200, 626);
+            this.ClientSize = new System.Drawing.Size(1208, 630);
+            this.Controls.Add(this.messageListDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -355,7 +437,6 @@
             this.Controls.Add(this.message_textListBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -375,6 +456,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.populargroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messageListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messageListDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +480,6 @@
         private dbDataSetTableAdapters.status_messageTableAdapter status_messageTableAdapter;
         private System.Windows.Forms.BindingSource messagesBindingSource;
         private dbDataSetTableAdapters.messagesTableAdapter messagesTableAdapter;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -416,5 +498,16 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource messageListBindingSource;
+        private dbDataSetTableAdapters.MessageListTableAdapter messageListTableAdapter;
+        private System.Windows.Forms.DataGridView messageListDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }
