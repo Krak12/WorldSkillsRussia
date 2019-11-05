@@ -826,6 +826,33 @@ WHERE        (first_name = @name)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MessageListTableAdapter" GeneratorDataComponentClassName="MessageListTableAdapter" Name="MessageList" UserDataComponentName="MessageListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillMessageList" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataMessageList" GeneratorSourceName="FillMessageList" GetMethodModifier="Public" GetMethodName="GetDataMessageList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataMessageList" UserSourceName="FillMessageList">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [user].first_name, [user].second_name, [user].patronymic, [user].telephone, [user].age, message_categories.message_categories, federal_districts.federal_districts, messages.processed
+FROM            [user] INNER JOIN
+                         federal_districts ON [user].id_user_federal_districts = federal_districts.Id_federal_districts INNER JOIN
+                         messages ON [user].Id_user = messages.Id_message_user INNER JOIN
+                         message_categories ON messages.Id_message_message_categories = message_categories.Id_message_categories</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="first_name" DataSetColumn="first_name" />
+              <Mapping SourceColumn="second_name" DataSetColumn="second_name" />
+              <Mapping SourceColumn="patronymic" DataSetColumn="patronymic" />
+              <Mapping SourceColumn="telephone" DataSetColumn="telephone" />
+              <Mapping SourceColumn="age" DataSetColumn="age" />
+              <Mapping SourceColumn="message_categories" DataSetColumn="message_categories" />
+              <Mapping SourceColumn="federal_districts" DataSetColumn="federal_districts" />
+              <Mapping SourceColumn="processed" DataSetColumn="processed" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -834,7 +861,7 @@ WHERE        (first_name = @name)</CommandText>
   <xs:element name="dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbDataSet" msprop:Generator_UserDSName="dbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="events" msprop:Generator_TableClassName="eventsDataTable" msprop:Generator_TableVarName="tableevents" msprop:Generator_RowChangedName="eventsRowChanged" msprop:Generator_TablePropName="events" msprop:Generator_RowDeletingName="eventsRowDeleting" msprop:Generator_RowChangingName="eventsRowChanging" msprop:Generator_RowEvHandlerName="eventsRowChangeEventHandler" msprop:Generator_RowDeletedName="eventsRowDeleted" msprop:Generator_RowClassName="eventsRow" msprop:Generator_UserTableName="events" msprop:Generator_RowEvArgName="eventsRowChangeEvent">
+        <xs:element name="events" msprop:Generator_TableClassName="eventsDataTable" msprop:Generator_TableVarName="tableevents" msprop:Generator_TablePropName="events" msprop:Generator_RowDeletingName="eventsRowDeleting" msprop:Generator_RowChangingName="eventsRowChanging" msprop:Generator_RowEvHandlerName="eventsRowChangeEventHandler" msprop:Generator_RowDeletedName="eventsRowDeleted" msprop:Generator_UserTableName="events" msprop:Generator_RowChangedName="eventsRowChanged" msprop:Generator_RowEvArgName="eventsRowChangeEvent" msprop:Generator_RowClassName="eventsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_events" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_events" msprop:Generator_ColumnPropNameInRow="Id_events" msprop:Generator_ColumnPropNameInTable="Id_eventsColumn" msprop:Generator_UserColumnName="Id_events" type="xs:int" />
@@ -858,7 +885,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="federal_districts" msprop:Generator_TableClassName="federal_districtsDataTable" msprop:Generator_TableVarName="tablefederal_districts" msprop:Generator_RowChangedName="federal_districtsRowChanged" msprop:Generator_TablePropName="federal_districts" msprop:Generator_RowDeletingName="federal_districtsRowDeleting" msprop:Generator_RowChangingName="federal_districtsRowChanging" msprop:Generator_RowEvHandlerName="federal_districtsRowChangeEventHandler" msprop:Generator_RowDeletedName="federal_districtsRowDeleted" msprop:Generator_RowClassName="federal_districtsRow" msprop:Generator_UserTableName="federal_districts" msprop:Generator_RowEvArgName="federal_districtsRowChangeEvent">
+        <xs:element name="federal_districts" msprop:Generator_TableClassName="federal_districtsDataTable" msprop:Generator_TableVarName="tablefederal_districts" msprop:Generator_TablePropName="federal_districts" msprop:Generator_RowDeletingName="federal_districtsRowDeleting" msprop:Generator_RowChangingName="federal_districtsRowChanging" msprop:Generator_RowEvHandlerName="federal_districtsRowChangeEventHandler" msprop:Generator_RowDeletedName="federal_districtsRowDeleted" msprop:Generator_UserTableName="federal_districts" msprop:Generator_RowChangedName="federal_districtsRowChanged" msprop:Generator_RowEvArgName="federal_districtsRowChangeEvent" msprop:Generator_RowClassName="federal_districtsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_federal_districts" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_federal_districts" msprop:Generator_ColumnPropNameInRow="Id_federal_districts" msprop:Generator_ColumnPropNameInTable="Id_federal_districtsColumn" msprop:Generator_UserColumnName="Id_federal_districts" type="xs:int" />
@@ -872,7 +899,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="message_categories" msprop:Generator_TableClassName="message_categoriesDataTable" msprop:Generator_TableVarName="tablemessage_categories" msprop:Generator_RowChangedName="message_categoriesRowChanged" msprop:Generator_TablePropName="message_categories" msprop:Generator_RowDeletingName="message_categoriesRowDeleting" msprop:Generator_RowChangingName="message_categoriesRowChanging" msprop:Generator_RowEvHandlerName="message_categoriesRowChangeEventHandler" msprop:Generator_RowDeletedName="message_categoriesRowDeleted" msprop:Generator_RowClassName="message_categoriesRow" msprop:Generator_UserTableName="message_categories" msprop:Generator_RowEvArgName="message_categoriesRowChangeEvent">
+        <xs:element name="message_categories" msprop:Generator_TableClassName="message_categoriesDataTable" msprop:Generator_TableVarName="tablemessage_categories" msprop:Generator_TablePropName="message_categories" msprop:Generator_RowDeletingName="message_categoriesRowDeleting" msprop:Generator_RowChangingName="message_categoriesRowChanging" msprop:Generator_RowEvHandlerName="message_categoriesRowChangeEventHandler" msprop:Generator_RowDeletedName="message_categoriesRowDeleted" msprop:Generator_UserTableName="message_categories" msprop:Generator_RowChangedName="message_categoriesRowChanged" msprop:Generator_RowEvArgName="message_categoriesRowChangeEvent" msprop:Generator_RowClassName="message_categoriesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_message_categories" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_message_categories" msprop:Generator_ColumnPropNameInRow="Id_message_categories" msprop:Generator_ColumnPropNameInTable="Id_message_categoriesColumn" msprop:Generator_UserColumnName="Id_message_categories" type="xs:int" />
@@ -886,7 +913,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="message_processing" msprop:Generator_TableClassName="message_processingDataTable" msprop:Generator_TableVarName="tablemessage_processing" msprop:Generator_RowChangedName="message_processingRowChanged" msprop:Generator_TablePropName="message_processing" msprop:Generator_RowDeletingName="message_processingRowDeleting" msprop:Generator_RowChangingName="message_processingRowChanging" msprop:Generator_RowEvHandlerName="message_processingRowChangeEventHandler" msprop:Generator_RowDeletedName="message_processingRowDeleted" msprop:Generator_RowClassName="message_processingRow" msprop:Generator_UserTableName="message_processing" msprop:Generator_RowEvArgName="message_processingRowChangeEvent">
+        <xs:element name="message_processing" msprop:Generator_TableClassName="message_processingDataTable" msprop:Generator_TableVarName="tablemessage_processing" msprop:Generator_TablePropName="message_processing" msprop:Generator_RowDeletingName="message_processingRowDeleting" msprop:Generator_RowChangingName="message_processingRowChanging" msprop:Generator_RowEvHandlerName="message_processingRowChangeEventHandler" msprop:Generator_RowDeletedName="message_processingRowDeleted" msprop:Generator_UserTableName="message_processing" msprop:Generator_RowChangedName="message_processingRowChanged" msprop:Generator_RowEvArgName="message_processingRowChangeEvent" msprop:Generator_RowClassName="message_processingRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_message_processing" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_message_processing" msprop:Generator_ColumnPropNameInRow="Id_message_processing" msprop:Generator_ColumnPropNameInTable="Id_message_processingColumn" msprop:Generator_UserColumnName="Id_message_processing" type="xs:int" />
@@ -903,7 +930,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="messages" msprop:Generator_TableClassName="messagesDataTable" msprop:Generator_TableVarName="tablemessages" msprop:Generator_RowChangedName="messagesRowChanged" msprop:Generator_TablePropName="messages" msprop:Generator_RowDeletingName="messagesRowDeleting" msprop:Generator_RowChangingName="messagesRowChanging" msprop:Generator_RowEvHandlerName="messagesRowChangeEventHandler" msprop:Generator_RowDeletedName="messagesRowDeleted" msprop:Generator_RowClassName="messagesRow" msprop:Generator_UserTableName="messages" msprop:Generator_RowEvArgName="messagesRowChangeEvent">
+        <xs:element name="messages" msprop:Generator_TableClassName="messagesDataTable" msprop:Generator_TableVarName="tablemessages" msprop:Generator_TablePropName="messages" msprop:Generator_RowDeletingName="messagesRowDeleting" msprop:Generator_RowChangingName="messagesRowChanging" msprop:Generator_RowEvHandlerName="messagesRowChangeEventHandler" msprop:Generator_RowDeletedName="messagesRowDeleted" msprop:Generator_UserTableName="messages" msprop:Generator_RowChangedName="messagesRowChanged" msprop:Generator_RowEvArgName="messagesRowChangeEvent" msprop:Generator_RowClassName="messagesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_message" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_message" msprop:Generator_ColumnPropNameInRow="Id_message" msprop:Generator_ColumnPropNameInTable="Id_messageColumn" msprop:Generator_UserColumnName="Id_message" type="xs:int" />
@@ -924,7 +951,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="popular_group" msprop:Generator_TableClassName="popular_groupDataTable" msprop:Generator_TableVarName="tablepopular_group" msprop:Generator_RowChangedName="popular_groupRowChanged" msprop:Generator_TablePropName="popular_group" msprop:Generator_RowDeletingName="popular_groupRowDeleting" msprop:Generator_RowChangingName="popular_groupRowChanging" msprop:Generator_RowEvHandlerName="popular_groupRowChangeEventHandler" msprop:Generator_RowDeletedName="popular_groupRowDeleted" msprop:Generator_RowClassName="popular_groupRow" msprop:Generator_UserTableName="popular_group" msprop:Generator_RowEvArgName="popular_groupRowChangeEvent">
+        <xs:element name="popular_group" msprop:Generator_TableClassName="popular_groupDataTable" msprop:Generator_TableVarName="tablepopular_group" msprop:Generator_TablePropName="popular_group" msprop:Generator_RowDeletingName="popular_groupRowDeleting" msprop:Generator_RowChangingName="popular_groupRowChanging" msprop:Generator_RowEvHandlerName="popular_groupRowChangeEventHandler" msprop:Generator_RowDeletedName="popular_groupRowDeleted" msprop:Generator_UserTableName="popular_group" msprop:Generator_RowChangedName="popular_groupRowChanged" msprop:Generator_RowEvArgName="popular_groupRowChangeEvent" msprop:Generator_RowClassName="popular_groupRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_popular_group" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_popular_group" msprop:Generator_ColumnPropNameInRow="Id_popular_group" msprop:Generator_ColumnPropNameInTable="Id_popular_groupColumn" msprop:Generator_UserColumnName="Id_popular_group" type="xs:int" />
@@ -939,7 +966,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="popular_messages" msprop:Generator_TableClassName="popular_messagesDataTable" msprop:Generator_TableVarName="tablepopular_messages" msprop:Generator_RowChangedName="popular_messagesRowChanged" msprop:Generator_TablePropName="popular_messages" msprop:Generator_RowDeletingName="popular_messagesRowDeleting" msprop:Generator_RowChangingName="popular_messagesRowChanging" msprop:Generator_RowEvHandlerName="popular_messagesRowChangeEventHandler" msprop:Generator_RowDeletedName="popular_messagesRowDeleted" msprop:Generator_RowClassName="popular_messagesRow" msprop:Generator_UserTableName="popular_messages" msprop:Generator_RowEvArgName="popular_messagesRowChangeEvent">
+        <xs:element name="popular_messages" msprop:Generator_TableClassName="popular_messagesDataTable" msprop:Generator_TableVarName="tablepopular_messages" msprop:Generator_TablePropName="popular_messages" msprop:Generator_RowDeletingName="popular_messagesRowDeleting" msprop:Generator_RowChangingName="popular_messagesRowChanging" msprop:Generator_RowEvHandlerName="popular_messagesRowChangeEventHandler" msprop:Generator_RowDeletedName="popular_messagesRowDeleted" msprop:Generator_UserTableName="popular_messages" msprop:Generator_RowChangedName="popular_messagesRowChanged" msprop:Generator_RowEvArgName="popular_messagesRowChangeEvent" msprop:Generator_RowClassName="popular_messagesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_popular_messages" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_popular_messages" msprop:Generator_ColumnPropNameInRow="Id_popular_messages" msprop:Generator_ColumnPropNameInTable="Id_popular_messagesColumn" msprop:Generator_UserColumnName="Id_popular_messages" type="xs:int" />
@@ -949,7 +976,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="staff" msprop:Generator_TableClassName="staffDataTable" msprop:Generator_TableVarName="tablestaff" msprop:Generator_RowChangedName="staffRowChanged" msprop:Generator_TablePropName="staff" msprop:Generator_RowDeletingName="staffRowDeleting" msprop:Generator_RowChangingName="staffRowChanging" msprop:Generator_RowEvHandlerName="staffRowChangeEventHandler" msprop:Generator_RowDeletedName="staffRowDeleted" msprop:Generator_RowClassName="staffRow" msprop:Generator_UserTableName="staff" msprop:Generator_RowEvArgName="staffRowChangeEvent">
+        <xs:element name="staff" msprop:Generator_TableClassName="staffDataTable" msprop:Generator_TableVarName="tablestaff" msprop:Generator_TablePropName="staff" msprop:Generator_RowDeletingName="staffRowDeleting" msprop:Generator_RowChangingName="staffRowChanging" msprop:Generator_RowEvHandlerName="staffRowChangeEventHandler" msprop:Generator_RowDeletedName="staffRowDeleted" msprop:Generator_UserTableName="staff" msprop:Generator_RowChangedName="staffRowChanged" msprop:Generator_RowEvArgName="staffRowChangeEvent" msprop:Generator_RowClassName="staffRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_satff" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_satff" msprop:Generator_ColumnPropNameInRow="Id_satff" msprop:Generator_ColumnPropNameInTable="Id_satffColumn" msprop:Generator_UserColumnName="Id_satff" type="xs:int" />
@@ -1007,7 +1034,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="staff_event" msprop:Generator_TableClassName="staff_eventDataTable" msprop:Generator_TableVarName="tablestaff_event" msprop:Generator_RowChangedName="staff_eventRowChanged" msprop:Generator_TablePropName="staff_event" msprop:Generator_RowDeletingName="staff_eventRowDeleting" msprop:Generator_RowChangingName="staff_eventRowChanging" msprop:Generator_RowEvHandlerName="staff_eventRowChangeEventHandler" msprop:Generator_RowDeletedName="staff_eventRowDeleted" msprop:Generator_RowClassName="staff_eventRow" msprop:Generator_UserTableName="staff_event" msprop:Generator_RowEvArgName="staff_eventRowChangeEvent">
+        <xs:element name="staff_event" msprop:Generator_TableClassName="staff_eventDataTable" msprop:Generator_TableVarName="tablestaff_event" msprop:Generator_TablePropName="staff_event" msprop:Generator_RowDeletingName="staff_eventRowDeleting" msprop:Generator_RowChangingName="staff_eventRowChanging" msprop:Generator_RowEvHandlerName="staff_eventRowChangeEventHandler" msprop:Generator_RowDeletedName="staff_eventRowDeleted" msprop:Generator_UserTableName="staff_event" msprop:Generator_RowChangedName="staff_eventRowChanged" msprop:Generator_RowEvArgName="staff_eventRowChangeEvent" msprop:Generator_RowClassName="staff_eventRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_staff_event" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_staff_event" msprop:Generator_ColumnPropNameInRow="Id_staff_event" msprop:Generator_ColumnPropNameInTable="Id_staff_eventColumn" msprop:Generator_UserColumnName="Id_staff_event" type="xs:int" />
@@ -1016,7 +1043,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="status_message" msprop:Generator_TableClassName="status_messageDataTable" msprop:Generator_TableVarName="tablestatus_message" msprop:Generator_RowChangedName="status_messageRowChanged" msprop:Generator_TablePropName="status_message" msprop:Generator_RowDeletingName="status_messageRowDeleting" msprop:Generator_RowChangingName="status_messageRowChanging" msprop:Generator_RowEvHandlerName="status_messageRowChangeEventHandler" msprop:Generator_RowDeletedName="status_messageRowDeleted" msprop:Generator_RowClassName="status_messageRow" msprop:Generator_UserTableName="status_message" msprop:Generator_RowEvArgName="status_messageRowChangeEvent">
+        <xs:element name="status_message" msprop:Generator_TableClassName="status_messageDataTable" msprop:Generator_TableVarName="tablestatus_message" msprop:Generator_TablePropName="status_message" msprop:Generator_RowDeletingName="status_messageRowDeleting" msprop:Generator_RowChangingName="status_messageRowChanging" msprop:Generator_RowEvHandlerName="status_messageRowChangeEventHandler" msprop:Generator_RowDeletedName="status_messageRowDeleted" msprop:Generator_UserTableName="status_message" msprop:Generator_RowChangedName="status_messageRowChanged" msprop:Generator_RowEvArgName="status_messageRowChangeEvent" msprop:Generator_RowClassName="status_messageRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_status_message" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_status_message" msprop:Generator_ColumnPropNameInRow="Id_status_message" msprop:Generator_ColumnPropNameInTable="Id_status_messageColumn" msprop:Generator_UserColumnName="Id_status_message" type="xs:int" />
@@ -1030,7 +1057,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="type_message" msprop:Generator_TableClassName="type_messageDataTable" msprop:Generator_TableVarName="tabletype_message" msprop:Generator_RowChangedName="type_messageRowChanged" msprop:Generator_TablePropName="type_message" msprop:Generator_RowDeletingName="type_messageRowDeleting" msprop:Generator_RowChangingName="type_messageRowChanging" msprop:Generator_RowEvHandlerName="type_messageRowChangeEventHandler" msprop:Generator_RowDeletedName="type_messageRowDeleted" msprop:Generator_RowClassName="type_messageRow" msprop:Generator_UserTableName="type_message" msprop:Generator_RowEvArgName="type_messageRowChangeEvent">
+        <xs:element name="type_message" msprop:Generator_TableClassName="type_messageDataTable" msprop:Generator_TableVarName="tabletype_message" msprop:Generator_TablePropName="type_message" msprop:Generator_RowDeletingName="type_messageRowDeleting" msprop:Generator_RowChangingName="type_messageRowChanging" msprop:Generator_RowEvHandlerName="type_messageRowChangeEventHandler" msprop:Generator_RowDeletedName="type_messageRowDeleted" msprop:Generator_UserTableName="type_message" msprop:Generator_RowChangedName="type_messageRowChanged" msprop:Generator_RowEvArgName="type_messageRowChangeEvent" msprop:Generator_RowClassName="type_messageRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_type_message" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_type_message" msprop:Generator_ColumnPropNameInRow="Id_type_message" msprop:Generator_ColumnPropNameInTable="Id_type_messageColumn" msprop:Generator_UserColumnName="Id_type_message" type="xs:int" />
@@ -1044,7 +1071,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="type_staff" msprop:Generator_TableClassName="type_staffDataTable" msprop:Generator_TableVarName="tabletype_staff" msprop:Generator_RowChangedName="type_staffRowChanged" msprop:Generator_TablePropName="type_staff" msprop:Generator_RowDeletingName="type_staffRowDeleting" msprop:Generator_RowChangingName="type_staffRowChanging" msprop:Generator_RowEvHandlerName="type_staffRowChangeEventHandler" msprop:Generator_RowDeletedName="type_staffRowDeleted" msprop:Generator_RowClassName="type_staffRow" msprop:Generator_UserTableName="type_staff" msprop:Generator_RowEvArgName="type_staffRowChangeEvent">
+        <xs:element name="type_staff" msprop:Generator_TableClassName="type_staffDataTable" msprop:Generator_TableVarName="tabletype_staff" msprop:Generator_TablePropName="type_staff" msprop:Generator_RowDeletingName="type_staffRowDeleting" msprop:Generator_RowChangingName="type_staffRowChanging" msprop:Generator_RowEvHandlerName="type_staffRowChangeEventHandler" msprop:Generator_RowDeletedName="type_staffRowDeleted" msprop:Generator_UserTableName="type_staff" msprop:Generator_RowChangedName="type_staffRowChanged" msprop:Generator_RowEvArgName="type_staffRowChangeEvent" msprop:Generator_RowClassName="type_staffRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_type_staff" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_type_staff" msprop:Generator_ColumnPropNameInRow="Id_type_staff" msprop:Generator_ColumnPropNameInTable="Id_type_staffColumn" msprop:Generator_UserColumnName="Id_type_staff" type="xs:int" />
@@ -1058,7 +1085,7 @@ WHERE        (first_name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_RowClassName="userRow" msprop:Generator_UserTableName="user" msprop:Generator_RowEvArgName="userRowChangeEvent">
+        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_UserTableName="user" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_RowEvArgName="userRowChangeEvent" msprop:Generator_RowClassName="userRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_user" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_user" msprop:Generator_ColumnPropNameInRow="Id_user" msprop:Generator_ColumnPropNameInTable="Id_userColumn" msprop:Generator_UserColumnName="Id_user" type="xs:int" />
@@ -1099,6 +1126,56 @@ WHERE        (first_name = @name)</CommandText>
               </xs:element>
               <xs:element name="age" msprop:Generator_ColumnVarNameInTable="columnage" msprop:Generator_ColumnPropNameInRow="age" msprop:Generator_ColumnPropNameInTable="ageColumn" msprop:Generator_UserColumnName="age" type="xs:int" minOccurs="0" />
               <xs:element name="id_user_federal_districts" msprop:Generator_ColumnVarNameInTable="columnid_user_federal_districts" msprop:Generator_ColumnPropNameInRow="id_user_federal_districts" msprop:Generator_ColumnPropNameInTable="id_user_federal_districtsColumn" msprop:Generator_UserColumnName="id_user_federal_districts" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MessageList" msprop:Generator_TableClassName="MessageListDataTable" msprop:Generator_TableVarName="tableMessageList" msprop:Generator_TablePropName="MessageList" msprop:Generator_RowDeletingName="MessageListRowDeleting" msprop:Generator_RowChangingName="MessageListRowChanging" msprop:Generator_RowEvHandlerName="MessageListRowChangeEventHandler" msprop:Generator_RowDeletedName="MessageListRowDeleted" msprop:Generator_UserTableName="MessageList" msprop:Generator_RowChangedName="MessageListRowChanged" msprop:Generator_RowEvArgName="MessageListRowChangeEvent" msprop:Generator_RowClassName="MessageListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="first_name" msprop:Generator_ColumnVarNameInTable="columnfirst_name" msprop:Generator_ColumnPropNameInRow="first_name" msprop:Generator_ColumnPropNameInTable="first_nameColumn" msprop:Generator_UserColumnName="first_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="second_name" msprop:Generator_ColumnVarNameInTable="columnsecond_name" msprop:Generator_ColumnPropNameInRow="second_name" msprop:Generator_ColumnPropNameInTable="second_nameColumn" msprop:Generator_UserColumnName="second_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patronymic" msprop:Generator_ColumnVarNameInTable="columnpatronymic" msprop:Generator_ColumnPropNameInRow="patronymic" msprop:Generator_ColumnPropNameInTable="patronymicColumn" msprop:Generator_UserColumnName="patronymic" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telephone" msprop:Generator_ColumnVarNameInTable="columntelephone" msprop:Generator_ColumnPropNameInRow="telephone" msprop:Generator_ColumnPropNameInTable="telephoneColumn" msprop:Generator_UserColumnName="telephone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="age" msprop:Generator_ColumnVarNameInTable="columnage" msprop:Generator_ColumnPropNameInRow="age" msprop:Generator_ColumnPropNameInTable="ageColumn" msprop:Generator_UserColumnName="age" type="xs:int" minOccurs="0" />
+              <xs:element name="message_categories" msprop:Generator_ColumnVarNameInTable="columnmessage_categories" msprop:Generator_ColumnPropNameInRow="message_categories" msprop:Generator_ColumnPropNameInTable="message_categoriesColumn" msprop:Generator_UserColumnName="message_categories">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="federal_districts" msprop:Generator_ColumnVarNameInTable="columnfederal_districts" msprop:Generator_ColumnPropNameInRow="federal_districts" msprop:Generator_ColumnPropNameInTable="federal_districtsColumn" msprop:Generator_UserColumnName="federal_districts">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="processed" msprop:Generator_ColumnVarNameInTable="columnprocessed" msprop:Generator_ColumnPropNameInRow="processed" msprop:Generator_ColumnPropNameInTable="processedColumn" msprop:Generator_UserColumnName="processed" type="xs:boolean" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1159,19 +1236,19 @@ WHERE        (first_name = @name)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_message_processing_messages1" msdata:parent="messages" msdata:child="message_processing" msdata:parentkey="Id_message" msdata:childkey="Id_message_processing_message" msprop:Generator_UserChildTable="message_processing" msprop:Generator_ChildPropName="Getmessage_processingRows" msprop:Generator_UserRelationName="FK_message_processing_messages1" msprop:Generator_ParentPropName="messagesRow" msprop:Generator_RelationVarName="relationFK_message_processing_messages1" msprop:Generator_UserParentTable="messages" />
-      <msdata:Relationship name="FK_message_processing_ToTable" msdata:parent="staff" msdata:child="message_processing" msdata:parentkey="Id_satff" msdata:childkey="Id_message_processing_staff" msprop:Generator_UserChildTable="message_processing" msprop:Generator_ChildPropName="Getmessage_processingRows" msprop:Generator_UserRelationName="FK_message_processing_ToTable" msprop:Generator_ParentPropName="staffRow" msprop:Generator_RelationVarName="relationFK_message_processing_ToTable" msprop:Generator_UserParentTable="staff" />
-      <msdata:Relationship name="FK_message_processing_ToTable_2" msdata:parent="status_message" msdata:child="message_processing" msdata:parentkey="Id_status_message" msdata:childkey="Id_message_processing_status_message" msprop:Generator_UserChildTable="message_processing" msprop:Generator_ChildPropName="Getmessage_processingRows" msprop:Generator_UserRelationName="FK_message_processing_ToTable_2" msprop:Generator_ParentPropName="status_messageRow" msprop:Generator_RelationVarName="relationFK_message_processing_ToTable_2" msprop:Generator_UserParentTable="status_message" />
-      <msdata:Relationship name="FK_messages_events1" msdata:parent="events" msdata:child="messages" msdata:parentkey="Id_events" msdata:childkey="Id_message_event" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_messages_events1" msprop:Generator_RelationVarName="relationFK_messages_events1" msprop:Generator_UserParentTable="events" msprop:Generator_ParentPropName="eventsRow" />
-      <msdata:Relationship name="FK_Messages_message_categories" msdata:parent="message_categories" msdata:child="messages" msdata:parentkey="Id_message_categories" msdata:childkey="Id_message_message_categories" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_Messages_message_categories" msprop:Generator_RelationVarName="relationFK_Messages_message_categories" msprop:Generator_UserParentTable="message_categories" msprop:Generator_ParentPropName="message_categoriesRow" />
-      <msdata:Relationship name="FK_Messages_type_message" msdata:parent="type_message" msdata:child="messages" msdata:parentkey="Id_type_message" msdata:childkey="Id_message_type_message" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_Messages_type_message" msprop:Generator_ParentPropName="type_messageRow" msprop:Generator_RelationVarName="relationFK_Messages_type_message" msprop:Generator_UserParentTable="type_message" />
-      <msdata:Relationship name="FK_messages_user1" msdata:parent="user" msdata:child="messages" msdata:parentkey="Id_user" msdata:childkey="Id_message_user" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_messages_user1" msprop:Generator_ParentPropName="userRow" msprop:Generator_RelationVarName="relationFK_messages_user1" msprop:Generator_UserParentTable="user" />
-      <msdata:Relationship name="FK_popular_group_ToTable" msdata:parent="events" msdata:child="popular_group" msdata:parentkey="Id_events" msdata:childkey="Id_popular_group_event" msprop:Generator_UserChildTable="popular_group" msprop:Generator_ChildPropName="Getpopular_groupRows" msprop:Generator_UserRelationName="FK_popular_group_ToTable" msprop:Generator_RelationVarName="relationFK_popular_group_ToTable" msprop:Generator_UserParentTable="events" msprop:Generator_ParentPropName="eventsRow" />
-      <msdata:Relationship name="FK_popular_messages_messages1" msdata:parent="messages" msdata:child="popular_messages" msdata:parentkey="Id_message" msdata:childkey="Id_popular_messages" msprop:Generator_UserChildTable="popular_messages" msprop:Generator_ChildPropName="Getpopular_messagesRows" msprop:Generator_UserRelationName="FK_popular_messages_messages1" msprop:Generator_RelationVarName="relationFK_popular_messages_messages1" msprop:Generator_UserParentTable="messages" msprop:Generator_ParentPropName="messagesRow" />
-      <msdata:Relationship name="FK_staff_ToTable" msdata:parent="type_staff" msdata:child="staff" msdata:parentkey="Id_type_staff" msdata:childkey="Id_staff_type_staff" msprop:Generator_UserChildTable="staff" msprop:Generator_ChildPropName="GetstaffRows" msprop:Generator_UserRelationName="FK_staff_ToTable" msprop:Generator_ParentPropName="type_staffRow" msprop:Generator_RelationVarName="relationFK_staff_ToTable" msprop:Generator_UserParentTable="type_staff" />
-      <msdata:Relationship name="FK_staff_event_events" msdata:parent="events" msdata:child="staff_event" msdata:parentkey="Id_events" msdata:childkey="Id_staff_event_event" msprop:Generator_UserChildTable="staff_event" msprop:Generator_ChildPropName="Getstaff_eventRows" msprop:Generator_UserRelationName="FK_staff_event_events" msprop:Generator_RelationVarName="relationFK_staff_event_events" msprop:Generator_UserParentTable="events" msprop:Generator_ParentPropName="eventsRow" />
-      <msdata:Relationship name="FK_staff_event_staff" msdata:parent="staff" msdata:child="staff_event" msdata:parentkey="Id_satff" msdata:childkey="Id_staff_event_staff" msprop:Generator_UserChildTable="staff_event" msprop:Generator_ChildPropName="Getstaff_eventRows" msprop:Generator_UserRelationName="FK_staff_event_staff" msprop:Generator_RelationVarName="relationFK_staff_event_staff" msprop:Generator_UserParentTable="staff" msprop:Generator_ParentPropName="staffRow" />
-      <msdata:Relationship name="FK_user_ToTable" msdata:parent="federal_districts" msdata:child="user" msdata:parentkey="Id_federal_districts" msdata:childkey="id_user_federal_districts" msprop:Generator_UserChildTable="user" msprop:Generator_ChildPropName="GetuserRows" msprop:Generator_UserRelationName="FK_user_ToTable" msprop:Generator_RelationVarName="relationFK_user_ToTable" msprop:Generator_UserParentTable="federal_districts" msprop:Generator_ParentPropName="federal_districtsRow" />
+      <msdata:Relationship name="FK_message_processing_messages1" msdata:parent="messages" msdata:child="message_processing" msdata:parentkey="Id_message" msdata:childkey="Id_message_processing_message" msprop:Generator_UserChildTable="message_processing" msprop:Generator_ChildPropName="Getmessage_processingRows" msprop:Generator_UserRelationName="FK_message_processing_messages1" msprop:Generator_RelationVarName="relationFK_message_processing_messages1" msprop:Generator_UserParentTable="messages" msprop:Generator_ParentPropName="messagesRow" />
+      <msdata:Relationship name="FK_message_processing_ToTable" msdata:parent="staff" msdata:child="message_processing" msdata:parentkey="Id_satff" msdata:childkey="Id_message_processing_staff" msprop:Generator_UserChildTable="message_processing" msprop:Generator_ChildPropName="Getmessage_processingRows" msprop:Generator_UserRelationName="FK_message_processing_ToTable" msprop:Generator_RelationVarName="relationFK_message_processing_ToTable" msprop:Generator_UserParentTable="staff" msprop:Generator_ParentPropName="staffRow" />
+      <msdata:Relationship name="FK_message_processing_ToTable_2" msdata:parent="status_message" msdata:child="message_processing" msdata:parentkey="Id_status_message" msdata:childkey="Id_message_processing_status_message" msprop:Generator_UserChildTable="message_processing" msprop:Generator_ChildPropName="Getmessage_processingRows" msprop:Generator_UserRelationName="FK_message_processing_ToTable_2" msprop:Generator_RelationVarName="relationFK_message_processing_ToTable_2" msprop:Generator_UserParentTable="status_message" msprop:Generator_ParentPropName="status_messageRow" />
+      <msdata:Relationship name="FK_messages_events1" msdata:parent="events" msdata:child="messages" msdata:parentkey="Id_events" msdata:childkey="Id_message_event" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_messages_events1" msprop:Generator_ParentPropName="eventsRow" msprop:Generator_RelationVarName="relationFK_messages_events1" msprop:Generator_UserParentTable="events" />
+      <msdata:Relationship name="FK_Messages_message_categories" msdata:parent="message_categories" msdata:child="messages" msdata:parentkey="Id_message_categories" msdata:childkey="Id_message_message_categories" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_Messages_message_categories" msprop:Generator_ParentPropName="message_categoriesRow" msprop:Generator_RelationVarName="relationFK_Messages_message_categories" msprop:Generator_UserParentTable="message_categories" />
+      <msdata:Relationship name="FK_Messages_type_message" msdata:parent="type_message" msdata:child="messages" msdata:parentkey="Id_type_message" msdata:childkey="Id_message_type_message" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_Messages_type_message" msprop:Generator_RelationVarName="relationFK_Messages_type_message" msprop:Generator_UserParentTable="type_message" msprop:Generator_ParentPropName="type_messageRow" />
+      <msdata:Relationship name="FK_messages_user1" msdata:parent="user" msdata:child="messages" msdata:parentkey="Id_user" msdata:childkey="Id_message_user" msprop:Generator_UserChildTable="messages" msprop:Generator_ChildPropName="GetmessagesRows" msprop:Generator_UserRelationName="FK_messages_user1" msprop:Generator_RelationVarName="relationFK_messages_user1" msprop:Generator_UserParentTable="user" msprop:Generator_ParentPropName="userRow" />
+      <msdata:Relationship name="FK_popular_group_ToTable" msdata:parent="events" msdata:child="popular_group" msdata:parentkey="Id_events" msdata:childkey="Id_popular_group_event" msprop:Generator_UserChildTable="popular_group" msprop:Generator_ChildPropName="Getpopular_groupRows" msprop:Generator_UserRelationName="FK_popular_group_ToTable" msprop:Generator_ParentPropName="eventsRow" msprop:Generator_RelationVarName="relationFK_popular_group_ToTable" msprop:Generator_UserParentTable="events" />
+      <msdata:Relationship name="FK_popular_messages_messages1" msdata:parent="messages" msdata:child="popular_messages" msdata:parentkey="Id_message" msdata:childkey="Id_popular_messages" msprop:Generator_UserChildTable="popular_messages" msprop:Generator_ChildPropName="Getpopular_messagesRows" msprop:Generator_UserRelationName="FK_popular_messages_messages1" msprop:Generator_ParentPropName="messagesRow" msprop:Generator_RelationVarName="relationFK_popular_messages_messages1" msprop:Generator_UserParentTable="messages" />
+      <msdata:Relationship name="FK_staff_ToTable" msdata:parent="type_staff" msdata:child="staff" msdata:parentkey="Id_type_staff" msdata:childkey="Id_staff_type_staff" msprop:Generator_UserChildTable="staff" msprop:Generator_ChildPropName="GetstaffRows" msprop:Generator_UserRelationName="FK_staff_ToTable" msprop:Generator_RelationVarName="relationFK_staff_ToTable" msprop:Generator_UserParentTable="type_staff" msprop:Generator_ParentPropName="type_staffRow" />
+      <msdata:Relationship name="FK_staff_event_events" msdata:parent="events" msdata:child="staff_event" msdata:parentkey="Id_events" msdata:childkey="Id_staff_event_event" msprop:Generator_UserChildTable="staff_event" msprop:Generator_ChildPropName="Getstaff_eventRows" msprop:Generator_UserRelationName="FK_staff_event_events" msprop:Generator_ParentPropName="eventsRow" msprop:Generator_RelationVarName="relationFK_staff_event_events" msprop:Generator_UserParentTable="events" />
+      <msdata:Relationship name="FK_staff_event_staff" msdata:parent="staff" msdata:child="staff_event" msdata:parentkey="Id_satff" msdata:childkey="Id_staff_event_staff" msprop:Generator_UserChildTable="staff_event" msprop:Generator_ChildPropName="Getstaff_eventRows" msprop:Generator_UserRelationName="FK_staff_event_staff" msprop:Generator_ParentPropName="staffRow" msprop:Generator_RelationVarName="relationFK_staff_event_staff" msprop:Generator_UserParentTable="staff" />
+      <msdata:Relationship name="FK_user_ToTable" msdata:parent="federal_districts" msdata:child="user" msdata:parentkey="Id_federal_districts" msdata:childkey="id_user_federal_districts" msprop:Generator_UserChildTable="user" msprop:Generator_ChildPropName="GetuserRows" msprop:Generator_UserRelationName="FK_user_ToTable" msprop:Generator_ParentPropName="federal_districtsRow" msprop:Generator_RelationVarName="relationFK_user_ToTable" msprop:Generator_UserParentTable="federal_districts" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="dbDataSet.cs">
+      <DependentUpon>dbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
